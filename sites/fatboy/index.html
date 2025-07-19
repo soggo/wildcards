@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FATBOY ($BOY) - The Chonkiest Memecoin on Solana 🐕</title>
+    <meta name="description" content="FATBOY ($BOY) - Inspired by the legendary Fat Dog Mendozza! Join the chonkiest community on Solana. Diamond hands only! 🚀">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fatboycoin.com/">
+    <meta property="og:title" content="FATBOY ($BOY) - The Chonkiest Memecoin on Solana">
+    <meta property="og:description" content="Inspired by Fat Dog Mendozza! The most wholesome chonky boi taking over Solana. Ape in now! 🐕💎">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=1200&h=630&fit=crop">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fatboycoin.com/">
+    <meta property="twitter:title" content="FATBOY ($BOY) - The Chonkiest Memecoin on Solana">
+    <meta property="twitter:description" content="Inspired by Fat Dog Mendozza! Join the chonkiest community on Solana 🐕🚀">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=1200&h=630&fit=crop">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐕</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 text-white overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-purple-500/30">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-3xl">🐕</span>
+                <span class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">FATBOY</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="#contract" class="hover:text-cyan-400 transition-colors">Contract</a>
+                <a href="#tokenomics" class="hover:text-cyan-400 transition-colors">Tokenomics</a>
+                <a href="#community" class="hover:text-cyan-400 transition-colors">Community</a>
+                <a href="#buy-now" class="bg-gradient-to-r from-purple-600 to-pink-400 px-6 py-2 rounded-full hover:scale-105 transition-transform">BUY NOW</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                <span id="hamburger">☰</span>
+                <span id="close" class="hidden">✕</span>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90 backdrop-blur-md">
+            <div class="px-4 py-4 space-y-4">
+                <a href="#hero" class="block hover:text-cyan-400 transition-colors">Home</a>
+                <a href="#contract" class="block hover:text-cyan-400 transition-colors">Contract</a>
+                <a href="#tokenomics" class="block hover:text-cyan-400 transition-colors">Tokenomics</a>
+                <a href="#community" class="block hover:text-cyan-400 transition-colors">Community</a>
+                <a href="#buy-now" class="block bg-gradient-to-r from-purple-600 to-pink-400 px-6 py-2 rounded-full text-center">BUY NOW</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-20 h-20 bg-cyan-400 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-20 w-16 h-16 bg-pink-400 rounded-full animate-bounce-slow"></div>
+            <div class="absolute bottom-40 left-20 w-24 h-24 bg-purple-600 rounded-full animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-10 w-12 h-12 bg-yellow-400 rounded-full animate-float"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="mb-8 animate-bounce-slow">
+                <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=300&h=300&fit=crop&crop=face" 
+                     alt="Fat Dog Mendozza" 
+                     class="w-48 h-48 md:w-64 md:h-64 mx-auto rounded-full border-4 border-yellow-400 shadow-2xl shadow-yellow-400/50">
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-black mb-6 bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-600 bg-clip-text text-transparent animate-pulse">
+                FATBOY
+            </h1>
+            
+            <div class="text-2xl md:text-4xl font-bold mb-4 text-cyan-400">
+                $BOY
+            </div>
+            
+            <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
+                🐕 <span class="text-yellow-400 font-bold">THE CHONKIEST BOI ON SOLANA</span> 🐕<br>
+                Inspired by the legendary <span class="text-pink-400 font-bold">Fat Dog Mendozza</span>!<br>
+                <span class="text-cyan-400">Diamond hands only, no paper hands allowed!</span>
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
+                <a href="#buy-now" class="bg-gradient-to-r from-purple-600 to-pink-400 px-8 py-4 rounded-full text-xl font-bold hover:scale-110 transition-transform shadow-lg hover:shadow-pink-400/50">
+                    🚀 APE IN NOW 🚀
+                </a>
+                <a href="#contract" class="border-2 border-cyan-400 px-8 py-4 rounded-full text-xl font-bold hover:bg-cyan-400 hover:text-black transition-colors">
+                    📋 VIEW CONTRACT
+                </a>
+            </div>
+            
+            <div class="text-lg text-yellow-400 animate-pulse">
+                🔥 LIVE ON SOLANA • TRADING ON JUPITER 🔥
+            </div>
+        </div>
+    </section>
+
+    <!-- Contract Section -->
+    <section id="contract" class="py-20 bg-black/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+                CONTRACT ADDRESS
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-purple-600/20 to-pink-400/20 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30">
+                    <div class="text-center mb-6">
+                        <p class="text-xl mb-4 text-cyan-400">🔐 VERIFIED CONTRACT ON SOLANA 🔐</p>
+                        <div class="bg-black/50 rounded-xl p-6 border border-yellow-400/50">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <code id="contract-address" class="text-lg md:text-xl font-mono text-yellow-400 break-all">
+                                    12333355bonk
+                                </code>
+                                <button id="copy-btn" class="bg-gradient-to-r from-cyan-400 to-purple-600 px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform flex items-center gap-2">
+                                    <span id="copy-text">📋 COPY</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                        <div class="bg-black/30 rounded-xl p-6 border border-cyan-400/30">
+                            <div class="text-3xl mb-2">🛡️</div>
+                            <div class="text-cyan-400 font-bold">VERIFIED</div>
+                            <div class="text-sm">Contract Audited</div>
+                        </div>
+                        <div class="bg-black/30 rounded-xl p-6 border border-pink-400/30">
+                            <div class="text-3xl mb-2">🔥</div>
+                            <div class="text-pink-400 font-bold">RENOUNCED</div>
+                            <div class="text-sm">Ownership Burned</div>
+                        </div>
+                        <div class="bg-black/30 rounded-xl p-6 border border-yellow-400/30">
+                            <div class="text-3xl mb-2">💎</div>
+                            <div class="text-yellow-400 font-bold">LOCKED</div>
+                            <div class="text-sm">Liquidity Secured</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent">
+                CHONKY TOKENOMICS
+            </h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- Supply Info -->
+                    <div class="bg-gradient-to-br from-purple-600/20 to-pink-400/20 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30">
+                        <h3 class="text-2xl font-bold mb-6 text-yellow-400 text-center">📊 SUPPLY BREAKDOWN</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-cyan-400">Total Supply:</span>
+                                <span class="font-bold text-xl">1,000,000,000 $BOY</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-pink-400">Circulating:</span>
+                                <span class="font-bold text-xl">850,000,000 $BOY</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400">Burned:</span>
+                                <span class="font-bold text-xl">150,000,000 $BOY</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Distribution -->
+                    <div class="bg-gradient-to-br from-cyan-400/20 to-purple-600/20 backdrop-blur-md rounded-2xl p-8 border border-cyan-500/30">
+                        <h3 class="text-2xl font-bold mb-6 text-yellow-400 text-center">🎯 DISTRIBUTION</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-green-400">🏊 Liquidity Pool:</span>
+                                <span class="font-bold">85%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-blue-400">👥 Community:</span>
+                                <span class="font-bold">10%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-red-400">🔥 Burned:</span>
+                                <span class="font-bold">5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features -->
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-black/30 rounded-xl p-6 text-center border border-yellow-400/30 hover:border-yellow-400 transition-colors">
+                        <div class="text-4xl mb-3">🚫</div>
+                        <div class="text-yellow-400 font-bold mb-2">NO TAX</div>
+                        <div class="text-sm">0% Buy/Sell Tax</div>
+                    </div>
+                    <div class="bg-black/30 rounded-xl p-6 text-center border border-cyan-400/30 hover:border-cyan-400 transition-colors">
+                        <div class="text-4xl mb-3">💎</div>
+                        <div class="text-cyan-400 font-bold mb-2">DIAMOND HANDS</div>
+                        <div class="text-sm">HODL Rewards</div>
+                    </div>
+                    <div class="bg-black/30 rounded-xl p-6 text-center border border-pink-400/30 hover:border-pink-400 transition-colors">
+                        <div class="text-4xl mb-3">🔥</div>
+                        <div class="text-pink-400 font-bold mb-2">DEFLATIONARY</div>
+                        <div class="text-sm">Regular Burns</div>
+                    </div>
+                    <div class="bg-black/30 rounded-xl p-6 text-center border border-purple-400/30 hover:border-purple-400 transition-colors">
+                        <div class="text-4xl mb-3">🚀</div>
+                        <div class="text-purple-400 font-bold mb-2">MOON MISSION</div>
+                        <div class="text-sm">To The Moon!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-black/30">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-pink-400 to-yellow-400 bg-clip-text text-transparent">
+                JOIN THE PACK
+            </h2>
+            
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <p class="text-xl md:text-2xl mb-8 text-cyan-400">
+                    🐕 <span class="text-yellow-400 font-bold">THE CHONKIEST COMMUNITY ON SOLANA</span> 🐕<br>
+                    Join thousands of diamond-handed degens who believe in the power of FATBOY!
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-gradient-to-br from-blue-500/20 to-cyan-400/20 rounded-xl p-6 text-center border border-cyan-400/30 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">🐦</div>
+                    <div class="text-cyan-400 font-bold text-xl mb-2">TWITTER</div>
+                    <div class="text-2xl font-bold mb-2">15.2K</div>
+                    <div class="text-sm">Followers</div>
+                    <a href="https://twitter.com/fatboycoin" target="_blank" class="inline-block mt-4 bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
+                        Follow Us
+                    </a>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-600/20 to-purple-500/20 rounded-xl p-6 text-center border border-purple-400/30 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">✈️</div>
+                    <div class="text-purple-400 font-bold text-xl mb-2">TELEGRAM</div>
+                    <div class="text-2xl font-bold mb-2">8.7K</div>
+                    <div class="text-sm">Members</div>
+                    <a href="https://t.me/fatboycoin" target="_blank" class="inline-block mt-4 bg-blue-600 px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
+                        Join Chat
+                    </a>
+                </div>
+                
+                <div class="bg-gradient-to-br from-indigo-500/20 to-purple-600/20 rounded-xl p-6 text-center border border-indigo-400/30 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">🎮</div>
+                    <div class="text-indigo-400 font-bold text-xl mb-2">DISCORD</div>
+                    <div class="text-2xl font-bold mb-2">5.3K</div>
+                    <div class="text-sm">Members</div>
+                    <a href="https://discord.gg/fatboycoin" target="_blank" class="inline-block mt-4 bg-indigo-600 px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors">
+                        Join Server
+                    </a>
+                </div>
+                
+                <div class="bg-gradient-to-br from-pink-500/20 to-red-500/20 rounded-xl p-6 text-center border border-pink-400/30 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">📺</div>
+                    <div class="text-pink-400 font-bold text-xl mb-2">YOUTUBE</div>
+                    <div class="text-2xl font-bold mb-2">2.1K</div>
+                    <div class="text-sm">Subscribers</div>
+                    <a href="https://youtube.com/@fatboycoin" target="_blank" class="inline-block mt-4 bg-red-600 px-4 py-2 rounded-full hover:bg-red-700 transition-colors">
+                        Subscribe
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-gradient-to-r from-purple-600/20 to-pink-400/20 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-400">🎉 COMMUNITY MILESTONES 🎉</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="text-3xl font-bold text-cyan-400">31K+</div>
+                            <div class="text-sm">Total Community</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-pink-400">2.5K+</div>
+                            <div class="text-sm">Holders</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Now Section -->
+    <section id="buy-now" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
+                APE IN NOW! 🚀
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-green-500/20 to-cyan-400/20 backdrop-blur-md rounded-2xl p-8 border border-green-500/30 mb-8">
+                    <div class="text-center mb-8">
+                        <p class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4">
+                            🔥 FATBOY IS LIVE ON JUPITER! 🔥
+                        </p>
+                        <p class="text-lg text-cyan-400">
+                            Don't miss the moonshot! Join the chonkiest community on Solana!
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                        <a href="https://jup.ag/swap/SOL-12333355bonk" 
+                           target="_blank"
+                           class="bg-gradient-to-r from-green-500 to-cyan-400 px-8 py-4 rounded-full text-xl font-bold hover:scale-110 transition-transform shadow-lg hover:shadow-green-400/50 flex items-center gap-3">
+                            <span class="text-2xl">🪐</span>
+                            BUY ON JUPITER
+                        </a>
+                        
+                        <div class="text-center">
+                            <div class="text-sm text-gray-400 mb-2">Current Price</div>
+                            <div class="text-2xl font-bold text-green-400">$0.000042</div>
+                            <div class="text-sm text-green-400">+1,247% (24h)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- How to Buy -->
+                <div class="bg-black/30 rounded-2xl p-8 border border-purple-500/30">
+                    <h3 class="text-2xl font-bold text-center mb-6 text-purple-400">🎯 HOW TO BUY FATBOY</h3>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="bg-purple-600/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">1️⃣</div>
+                            <div class="font-bold text-cyan-400 mb-2">GET SOL</div>
+                            <div class="text-sm">Buy SOL on any exchange</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-purple-600/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">2️⃣</div>
+                            <div class="font-bold text-pink-400 mb-2">CONNECT WALLET</div>
+                            <div class="text-sm">Use Phantom or Solflare</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-purple-600/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">3️⃣</div>
+                            <div class="font-bold text-yellow-400 mb-2">SWAP ON JUPITER</div>
+                            <div class="text-sm">Swap SOL for $BOY</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-purple-600/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">4️⃣</div>
+                            <div class="font-bold text-green-400 mb-2">HODL & MOON</div>
+                            <div class="text-sm">Diamond hands to the moon!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black/50 border-t border-purple-500/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-6">
+                    <span class="text-4xl">🐕</span>
+                    <span class="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">FATBOY</span>
+                </div>
+                
+                <p class="text-lg mb-6 text-cyan-400">
+                    The chonkiest memecoin on Solana, inspired by Fat Dog Mendozza!
+                </p>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://twitter.com/fatboycoin" target="_blank" class="text-2xl hover:text-cyan-400 transition-colors">🐦</a>
+                    <a href="https://t.me/fatboycoin" target="_blank" class="text-2xl hover:text-cyan-400 transition-colors">✈️</a>
+                    <a href="https://discord.gg/fatboycoin" target="_blank" class="text-2xl hover:text-cyan-400 transition-colors">🎮</a>
+                    <a href="https://youtube.com/@fatboycoin" target="_blank" class="text-2xl hover:text-cyan-400 transition-colors">📺</a>
+                </div>
+                
+                <div class="text-sm text-gray-400 mb-4">
+                    Contract: <code class="text-yellow-400">12333355bonk</code>
+                </div>
+                
+                <div class="text-xs text-gray-500">
+                    © 2024 FATBOY. All rights reserved. This is a memecoin for entertainment purposes.
+                    <br>Always DYOR and never invest more than you can afford to lose.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburger = document.getElementById('hamburger');
+        const close = document.getElementById('close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburger.classList.toggle('hidden');
+            close.classList.toggle('hidden');
+        });
+
+        // Copy contract address
+        const copyBtn = document.getElementById('copy-btn');
+        const copyText = document.getElementById('copy-text');
+        const contractAddress = document.getElementById('contract-address').textContent.trim();
+
+        copyBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(contractAddress);
+                copyText.textContent = '✅ COPIED!';
+                copyBtn.classList.add('bg-green-500');
+                setTimeout(() => {
+                    copyText.textContent = '📋 COPY';
+                    copyBtn.classList.remove('bg-green-500');
+                }, 2000);
+            } catch (err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = contractAddress;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                copyText.textContent = '✅ COPIED!';
+                setTimeout(() => {
+                    copyText.textContent = '📋 COPY';
+                }, 2000);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                    hamburger.classList.remove('hidden');
+                    close.classList.add('hidden');
+                }
+            });
+        });
+
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click tracking for buy buttons
+            document.querySelectorAll('a[href*="jup.ag"]').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Track buy button clicks (you can integrate with analytics here)
+                    console.log('Buy button clicked');
+                });
+            });
+
+            // Add hover effects to cards
+            document.querySelectorAll('.hover\\:scale-105').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
