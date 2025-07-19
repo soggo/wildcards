@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Deep | $DEEP - Dive Into The Depths of Profit</title>
+    <meta name="description" content="The Deep ($DEEP) - The most unhinged memecoin on Solana. Join the Seven and dive deep into massive gains. Diamond hands only!">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thedeeptoken.com/">
+    <meta property="og:title" content="The Deep | $DEEP - Dive Into The Depths of Profit">
+    <meta property="og:description" content="The most unhinged memecoin on Solana. Join the Seven and dive deep into massive gains!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=630&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thedeeptoken.com/">
+    <meta property="twitter:title" content="The Deep | $DEEP - Dive Into The Depths of Profit">
+    <meta property="twitter:description" content="The most unhinged memecoin on Solana. Join the Seven and dive deep into massive gains!">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=630&fit=crop">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-purple-900 via-blue-900 to-cyan-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-purple-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🌊</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">$DEEP</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="hover:text-purple-400 transition-colors">Home</a>
+                    <a href="#contract" class="hover:text-purple-400 transition-colors">Contract</a>
+                    <a href="#tokenomics" class="hover:text-purple-400 transition-colors">Tokenomics</a>
+                    <a href="#community" class="hover:text-purple-400 transition-colors">Community</a>
+                    <a href="#buy-now" class="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-2 rounded-full hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105">BUY NOW</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#hero" class="block px-3 py-2 hover:text-purple-400">Home</a>
+                <a href="#contract" class="block px-3 py-2 hover:text-purple-400">Contract</a>
+                <a href="#tokenomics" class="block px-3 py-2 hover:text-purple-400">Tokenomics</a>
+                <a href="#community" class="block px-3 py-2 hover:text-purple-400">Community</a>
+                <a href="#buy-now" class="block px-3 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg mx-3 text-center">BUY NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-blue-900/50 to-cyan-900/50"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&h=1080&fit=crop')] bg-cover bg-center opacity-20"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 animate-float">
+            <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full opacity-20 blur-xl"></div>
+        </div>
+        <div class="absolute bottom-20 right-10 animate-float" style="animation-delay: -2s;">
+            <div class="w-24 h-24 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full opacity-20 blur-xl"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-6xl mx-auto px-4">
+            <div class="mb-8 animate-bounce-slow">
+                <span class="text-8xl md:text-9xl">🌊</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent animate-pulse-slow">
+                THE DEEP
+            </h1>
+            
+            <p class="text-xl md:text-3xl mb-4 text-cyan-300 font-semibold">
+                $DEEP - Dive Into The Depths of Profit
+            </p>
+            
+            <p class="text-lg md:text-xl mb-8 text-gray-300 max-w-3xl mx-auto">
+                The most unhinged superhero deserves the most unhinged memecoin! 🦑 Join The Seven's most chaotic member on Solana. Diamond hands only, paper hands get eaten by sea creatures! 
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <button class="bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 rounded-full text-xl font-bold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-110 shadow-2xl">
+                    🚀 APE IN NOW
+                </button>
+                <button class="border-2 border-cyan-400 px-8 py-4 rounded-full text-xl font-bold hover:bg-cyan-400 hover:text-black transition-all transform hover:scale-110">
+                    📊 VIEW CHART
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-purple-500/20">
+                    <div class="text-2xl font-bold text-cyan-400">$0.0001</div>
+                    <div class="text-sm text-gray-400">Current Price</div>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-purple-500/20">
+                    <div class="text-2xl font-bold text-pink-400">1B</div>
+                    <div class="text-sm text-gray-400">Total Supply</div>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-purple-500/20">
+                    <div class="text-2xl font-bold text-purple-400">$2.1M</div>
+                    <div class="text-sm text-gray-400">Market Cap</div>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-purple-500/20">
+                    <div class="text-2xl font-bold text-cyan-400">8.9K</div>
+                    <div class="text-sm text-gray-400">Holders</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contract Section -->
+    <section id="contract" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                Contract Address
+            </h2>
+            
+            <div class="bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30 mb-8">
+                <p class="text-gray-300 mb-4 text-lg">Solana Contract Address:</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div class="bg-gray-900 rounded-lg px-4 py-3 font-mono text-sm sm:text-base break-all">
+                        <span id="contract-address">3499595930jsjskskbonk</span>
+                    </div>
+                    <button id="copy-btn" class="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        Copy
+                    </button>
+                </div>
+                <p class="text-sm text-gray-400 mt-4">Always verify the contract address before trading!</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-black/30 backdrop-blur-md rounded-xl p-6 border border-cyan-500/20">
+                    <h3 class="text-2xl font-bold mb-4 text-cyan-400">🔒 Security Features</h3>
+                    <ul class="text-left space-y-2 text-gray-300">
+                        <li>✅ Liquidity Locked Forever</li>
+                        <li>✅ Contract Renounced</li>
+                        <li>✅ No Mint Function</li>
+                        <li>✅ Community Owned</li>
+                    </ul>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md rounded-xl p-6 border border-pink-500/20">
+                    <h3 class="text-2xl font-bold mb-4 text-pink-400">⚡ Quick Stats</h3>
+                    <ul class="text-left space-y-2 text-gray-300">
+                        <li>🌊 Launched on Solana</li>
+                        <li>🦑 Zero Tax Token</li>
+                        <li>💎 Diamond Hand Rewards</li>
+                        <li>🚀 Moon Mission Ready</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20"></div>
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Tokenomics
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Built for the community, by the community. No BS, just pure degen energy! 🌊
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <div class="bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30">
+                        <h3 class="text-3xl font-bold mb-6 text-center text-cyan-400">Supply Distribution</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center p-4 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg">
+                                <span class="font-semibold">🌊 Community Pool</span>
+                                <span class="text-cyan-400 font-bold">85%</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg">
+                                <span class="font-semibold">🔥 Liquidity Pool</span>
+                                <span class="text-pink-400 font-bold">10%</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-gradient-to-r from-pink-600/20 to-purple-600/20 rounded-lg">
+                                <span class="font-semibold">📈 Marketing</span>
+                                <span class="text-purple-400 font-bold">5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-cyan-500/20">
+                        <h4 class="text-xl font-bold mb-3 text-cyan-400">🦑 Total Supply</h4>
+                        <p class="text-3xl font-bold text-white">1,000,000,000</p>
+                        <p class="text-gray-400">One billion $DEEP tokens</p>
+                    </div>
+                    
+                    <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-pink-500/20">
+                        <h4 class="text-xl font-bold mb-3 text-pink-400">💎 Tax Structure</h4>
+                        <p class="text-3xl font-bold text-white">0% / 0%</p>
+                        <p class="text-gray-400">No buy/sell tax - Pure freedom!</p>
+                    </div>
+                    
+                    <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-purple-500/20">
+                        <h4 class="text-xl font-bold mb-3 text-purple-400">🔒 Liquidity</h4>
+                        <p class="text-3xl font-bold text-white">LOCKED</p>
+                        <p class="text-gray-400">Forever locked, no rug possible!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-cyan-400">🌊 The Deep's Roadmap to the Abyss</h3>
+                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                    <div class="p-6 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl">
+                        <div class="text-3xl mb-3">🚀</div>
+                        <h4 class="font-bold mb-2 text-purple-400">Phase 1: Surface Breach</h4>
+                        <p class="text-sm text-gray-300">Launch on Solana, build community, establish dominance in the meme ocean</p>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 rounded-xl">
+                        <div class="text-3xl mb-3">🌊</div>
+                        <h4 class="font-bold mb-2 text-cyan-400">Phase 2: Deep Dive</h4>
+                        <p class="text-sm text-gray-300">Major CEX listings, partnerships, and community events that make waves</p>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-pink-600/20 to-purple-600/20 rounded-xl">
+                        <div class="text-3xl mb-3">🦑</div>
+                        <h4 class="font-bold mb-2 text-pink-400">Phase 3: Abyss Domination</h4>
+                        <p class="text-sm text-gray-300">NFT collection, merchandise, and total memecoin supremacy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                    Join The Seven
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Dive deep with the most unhinged community in crypto! We're not just hodling, we're conquering the depths! 🌊🦑
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-blue-500/20 text-center hover:border-blue-400 transition-all transform hover:scale-105">
+                    <div class="text-4xl mb-4">🐦</div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-400">Twitter</h3>
+                    <p class="text-gray-400 mb-4">Follow @TheDeepSOL</p>
+                    <a href="https://twitter.com/TheDeepSOL" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors">Follow</a>
+                </div>
+
+                <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-cyan-500/20 text-center hover:border-cyan-400 transition-all transform hover:scale-105">
+                    <div class="text-4xl mb-4">✈️</div>
+                    <h3 class="text-xl font-bold mb-2 text-cyan-400">Telegram</h3>
+                    <p class="text-gray-400 mb-4">Join the chaos</p>
+                    <a href="https://t.me/TheDeepSOL" target="_blank" class="bg-cyan-600 hover:bg-cyan-700 px-4 py-2 rounded-lg transition-colors">Join</a>
+                </div>
+
+                <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-purple-500/20 text-center hover:border-purple-400 transition-all transform hover:scale-105">
+                    <div class="text-4xl mb-4">🎮</div>
+                    <h3 class="text-xl font-bold mb-2 text-purple-400">Discord</h3>
+                    <p class="text-gray-400 mb-4">Deep discussions</p>
+                    <a href="https://discord.gg/TheDeepSOL" target="_blank" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition-colors">Join</a>
+                </div>
+
+                <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-pink-500/20 text-center hover:border-pink-400 transition-all transform hover:scale-105">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold mb-2 text-pink-400">Website</h3>
+                    <p class="text-gray-400 mb-4">Official portal</p>
+                    <a href="#" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg transition-colors">Visit</a>
+                </div>
+            </div>
+
+            <div class="bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30">
+                <h3 class="text-3xl font-bold text-center mb-8 text-cyan-400">🌊 Community Stats</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-purple-400 mb-2">12.5K</div>
+                        <div class="text-gray-400">Twitter Followers</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-cyan-400 mb-2">8.9K</div>
+                        <div class="text-gray-400">Telegram Members</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-pink-400 mb-2">5.2K</div>
+                        <div class="text-gray-400">Discord Members</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-purple-400 mb-2">15.7K</div>
+                        <div class="text-gray-400">Total Holders</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl font-bold mb-6 text-cyan-400">🦑 The Deep's Commandments</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl p-6">
+                        <div class="text-3xl mb-3">💎</div>
+                        <h4 class="font-bold mb-2">Diamond Hands Only</h4>
+                        <p class="text-sm text-gray-300">Paper hands get eaten by sea creatures</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-cyan-600/20 to-blue-600/20 rounded-xl p-6">
+                        <div class="text-3xl mb-3">🌊</div>
+                        <h4 class="font-bold mb-2">Ride the Waves</h4>
+                        <p class="text-sm text-gray-300">HODL through the storms to reach the depths</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-pink-600/20 to-purple-600/20 rounded-xl p-6">
+                        <div class="text-3xl mb-3">🦑</div>
+                        <h4 class="font-bold mb-2">Embrace the Chaos</h4>
+                        <p class="text-sm text-gray-300">Be unhinged, be legendary</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Now Section -->
+    <section id="buy-now" class="py-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/30 to-cyan-900/30"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Dive Into $DEEP
+            </h2>
+            
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Ready to join The Seven's most chaotic member? Don't let this moonshot swim away! 🚀🌊
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30 hover:border-purple-400 transition-all transform hover:scale-105">
+                    <div class="text-6xl mb-4">🪐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-400">Jupiter</h3>
+                    <p class="text-gray-300 mb-6">The best DEX on Solana for smooth swaps</p>
+                    <a href="https://jup.ag/swap/SOL-3499595930jsjskskbonk" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 rounded-full text-lg font-bold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-110 inline-block">
+                        Buy on Jupiter 🚀
+                    </a>
+                </div>
+
+                <div class="bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-cyan-500/30 hover:border-cyan-400 transition-all transform hover:scale-105">
+                    <div class="text-6xl mb-4">🦄</div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyan-400">Uniswap</h3>
+                    <p class="text-gray-300 mb-6">The OG DEX for maximum liquidity</p>
+                    <a href="https://app.uniswap.org/#/swap?outputCurrency=3499595930jsjskskbonk" target="_blank" class="bg-gradient-to-r from-cyan-600 to-blue-600 px-8 py-4 rounded-full text-lg font-bold hover:from-cyan-700 hover:to-blue-700 transition-all transform hover:scale-110 inline-block">
+                        Buy on Uniswap 🌊
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-pink-500/30 mb-8">
+                <h3 class="text-2xl font-bold mb-6 text-pink-400">🦑 How to Buy $DEEP</h3>
+                <div class="grid md:grid-cols-4 gap-4 text-left">
+                    <div class="p-4 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl">
+                        <div class="text-2xl mb-2">1️⃣</div>
+                        <h4 class="font-bold mb-2">Get SOL</h4>
+                        <p class="text-sm text-gray-300">Buy SOL on any exchange</p>
+                    </div>
+                    <div class="p-4 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 rounded-xl">
+                        <div class="text-2xl mb-2">2️⃣</div>
+                        <h4 class="font-bold mb-2">Setup Wallet</h4>
+                        <p class="text-sm text-gray-300">Use Phantom or Solflare</p>
+                    </div>
+                    <div class="p-4 bg-gradient-to-br from-pink-600/20 to-purple-600/20 rounded-xl">
+                        <div class="text-2xl mb-2">3️⃣</div>
+                        <h4 class="font-bold mb-2">Connect DEX</h4>
+                        <p class="text-sm text-gray-300">Go to Jupiter or Uniswap</p>
+                    </div>
+                    <div class="p-4 bg-gradient-to-br from-purple-600/20 to-cyan-600/20 rounded-xl">
+                        <div class="text-2xl mb-2">4️⃣</div>
+                        <h4 class="font-bold mb-2">Swap & HODL</h4>
+                        <p class="text-sm text-gray-300">Diamond hands to the abyss!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-lg text-gray-300 mb-6">
+                    ⚠️ Always DYOR and never invest more than you can afford to lose! ⚠️
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 rounded-full text-xl font-bold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-110 shadow-2xl">
+                        🌊 DIVE DEEP NOW
+                    </button>
+                    <button class="border-2 border-cyan-400 px-8 py-4 rounded-full text-xl font-bold hover:bg-cyan-400 hover:text-black transition-all transform hover:scale-110">
+                        📈 VIEW CHART
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-purple-500/20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <span class="text-4xl">🌊</span>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">$DEEP</span>
+                </div>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    The Deep - The most unhinged memecoin on Solana. Join the chaos, embrace the depths, and ride the waves to financial freedom! 🦑
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-6 mb-8">
+                <a href="https://twitter.com/TheDeepSOL" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">Twitter</a>
+                <a href="https://t.me/TheDeepSOL" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">Telegram</a>
+                <a href="https://discord.gg/TheDeepSOL" target="_blank" class="text-gray-400 hover:text-purple-400 transition-colors">Discord</a>
+                <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors">Website</a>
+            </div>
+
+            <div class="text-center text-gray-500 text-sm">
+                <p class="mb-2">© 2024 The Deep Token. All rights reserved.</p>
+                <p>This is a meme token with no intrinsic value or expectation of financial return.</p>
+                <p class="mt-2">🌊 Dive responsibly, ape wisely! 🦑</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Copy contract address
+        const copyBtn = document.getElementById('copy-btn');
+        const contractAddress = document.getElementById('contract-address');
+
+        copyBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(contractAddress.textContent);
+                copyBtn.innerHTML = `
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Copied!
+                `;
+                setTimeout(() => {
+                    copyBtn.innerHTML = `
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        Copy
+                    `;
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-black/40');
+            } else {
+                nav.classList.remove('bg-black/40');
+            }
+        });
+
+        // Add click tracking for buy buttons
+        document.querySelectorAll('a[href*="jup.ag"], a[href*="uniswap"]').forEach(link => {
+            link.addEventListener('click', () => {
+                console.log('Buy button clicked:', link.href);
+                // Add analytics tracking here
+            });
+        });
+    </script>
+</body>
+</html>
