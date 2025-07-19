@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$MEND - Mendozzy | The Fattest Dog on Solana 🐕</title>
+    <meta name="description" content="Meet Mendozzy ($MEND) - The legendary fatdog taking over Solana! Join the pack and ride this moonshot to Valhalla! 🚀">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mendozzy.sol">
+    <meta property="og:title" content="$MEND - Mendozzy | The Fattest Dog on Solana">
+    <meta property="og:description" content="The legendary fatdog taking over Solana! Join the pack and ride this moonshot! 🚀🐕">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=1200&h=630&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mendozzy.sol">
+    <meta property="twitter:title" content="$MEND - Mendozzy | The Fattest Dog on Solana">
+    <meta property="twitter:description" content="The legendary fatdog taking over Solana! Join the pack and ride this moonshot! 🚀🐕">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=1200&h=630&fit=crop">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐕</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-purple-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🐕</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">$MEND</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="#contract" class="hover:text-cyan-400 transition-colors">Contract</a>
+                    <a href="#tokenomics" class="hover:text-cyan-400 transition-colors">Tokenomics</a>
+                    <a href="#community" class="hover:text-cyan-400 transition-colors">Community</a>
+                    <a href="#buy-now" class="bg-gradient-to-r from-purple-600 to-pink-400 px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform">BUY NOW</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#hero" class="hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="#contract" class="hover:text-cyan-400 transition-colors">Contract</a>
+                    <a href="#tokenomics" class="hover:text-cyan-400 transition-colors">Tokenomics</a>
+                    <a href="#community" class="hover:text-cyan-400 transition-colors">Community</a>
+                    <a href="#buy-now" class="bg-gradient-to-r from-purple-600 to-pink-400 px-6 py-2 rounded-full font-bold text-center">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-20 h-20 bg-cyan-400/20 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-20 w-16 h-16 bg-pink-400/20 rounded-full animate-bounce-slow"></div>
+            <div class="absolute bottom-20 left-20 w-24 h-24 bg-purple-600/20 rounded-full animate-pulse-slow"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="animate-float">
+                <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=300&h=300&fit=crop&crop=face" 
+                     alt="Mendozzy the Fatdog" 
+                     class="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto mb-8 border-4 border-cyan-400 shadow-2xl shadow-cyan-400/50">
+            </div>
+            
+            <h1 class="text-4xl md:text-7xl font-black mb-6 bg-gradient-to-r from-cyan-400 via-purple-600 to-pink-400 bg-clip-text text-transparent animate-pulse">
+                MENDOZZY
+            </h1>
+            
+            <div class="text-2xl md:text-4xl font-bold mb-4 text-cyan-400">
+                $MEND
+            </div>
+            
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                🐕 <span class="font-bold text-pink-400">The Fattest Dog on Solana!</span> 🐕<br>
+                <span class="text-lg md:text-xl text-gray-300">Mendoza ain't just fat, he's PHAT with gains! Join the pack and ride this legendary moonshot to Valhalla! 🚀</span>
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="#buy-now" class="bg-gradient-to-r from-purple-600 to-pink-400 px-8 py-4 rounded-full text-xl font-bold hover:scale-110 transition-transform shadow-lg hover:shadow-pink-400/50 animate-pulse">
+                    🚀 APE IN NOW 🚀
+                </a>
+                <a href="#contract" class="border-2 border-cyan-400 px-8 py-4 rounded-full text-xl font-bold hover:bg-cyan-400 hover:text-black transition-all">
+                    📋 CONTRACT
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto text-center">
+                <div class="bg-black/30 backdrop-blur-sm rounded-lg p-4 border border-purple-500/30">
+                    <div class="text-2xl font-bold text-cyan-400">🔥</div>
+                    <div class="text-sm text-gray-300">BASED</div>
+                </div>
+                <div class="bg-black/30 backdrop-blur-sm rounded-lg p-4 border border-purple-500/30">
+                    <div class="text-2xl font-bold text-pink-400">💎</div>
+                    <div class="text-sm text-gray-300">DIAMOND PAWS</div>
+                </div>
+                <div class="bg-black/30 backdrop-blur-sm rounded-lg p-4 border border-purple-500/30">
+                    <div class="text-2xl font-bold text-purple-400">🌙</div>
+                    <div class="text-sm text-gray-300">MOONBOUND</div>
+                </div>
+                <div class="bg-black/30 backdrop-blur-sm rounded-lg p-4 border border-purple-500/30">
+                    <div class="text-2xl font-bold text-cyan-400">⚡</div>
+                    <div class="text-sm text-gray-300">LIGHTNING FAST</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contract Section -->
+    <section id="contract" class="py-20 bg-black/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+                📋 CONTRACT ADDRESS
+            </h2>
+            
+            <div class="bg-gradient-to-r from-purple-600/20 to-pink-400/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
+                <div class="text-sm text-gray-400 mb-2">SOLANA CONTRACT</div>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <code id="contract-address" class="bg-black/50 px-6 py-3 rounded-lg text-cyan-400 font-mono text-sm md:text-base break-all">
+                        123355bonk
+                    </code>
+                    <button id="copy-btn" class="bg-gradient-to-r from-purple-600 to-pink-400 px-6 py-3 rounded-lg font-bold hover:scale-105 transition-transform flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        COPY
+                    </button>
+                </div>
+                <div class="mt-4 text-sm text-gray-400">
+                    ⚠️ Always verify contract address before trading! ⚠️
+                </div>
+            </div>
+
+            <div class="mt-8 text-yellow-400 font-bold">
+                🔒 VERIFIED ON SOLSCAN | 🛡️ LIQUIDITY LOCKED | 🔥 OWNERSHIP RENOUNCED
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+                📊 TOKENOMICS
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Supply Info -->
+                <div class="bg-gradient-to-br from-purple-600/20 to-pink-400/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
+                    <h3 class="text-2xl font-bold mb-6 text-cyan-400">🪙 SUPPLY DETAILS</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Total Supply:</span>
+                            <span class="font-bold text-pink-400">1,000,000,000 $MEND</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Circulating Supply:</span>
+                            <span class="font-bold text-cyan-400">850,000,000 $MEND</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Burned:</span>
+                            <span class="font-bold text-red-400">150,000,000 $MEND 🔥</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Tax:</span>
+                            <span class="font-bold text-green-400">0% BUY/SELL 🎉</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Distribution -->
+                <div class="bg-gradient-to-br from-cyan-400/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-cyan-400/30">
+                    <h3 class="text-2xl font-bold mb-6 text-pink-400">🎯 DISTRIBUTION</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Liquidity Pool:</span>
+                            <span class="font-bold text-cyan-400">70% 🌊</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Community Rewards:</span>
+                            <span class="font-bold text-pink-400">15% 🎁</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Burned Forever:</span>
+                            <span class="font-bold text-red-400">15% 🔥</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Team/Dev:</span>
+                            <span class="font-bold text-green-400">0% 💎</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roadmap -->
+            <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
+                <h3 class="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+                    🗺️ ROADMAP TO THE MOON
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            🚀
+                        </div>
+                        <h4 class="text-xl font-bold text-cyan-400 mb-2">PHASE 1: LAUNCH</h4>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li>✅ Contract Deployed</li>
+                            <li>✅ Liquidity Added</li>
+                            <li>✅ Community Building</li>
+                            <li>✅ Memes & Vibes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            🌙
+                        </div>
+                        <h4 class="text-xl font-bold text-pink-400 mb-2">PHASE 2: MOON</h4>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li>🔄 DEX Listings</li>
+                            <li>🔄 Influencer Partnerships</li>
+                            <li>🔄 Community Events</li>
+                            <li>🔄 Mendozzy NFTs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            ⭐
+                        </div>
+                        <h4 class="text-xl font-bold text-purple-400 mb-2">PHASE 3: VALHALLA</h4>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li>🔮 Major CEX Listings</li>
+                            <li>🔮 Mendozzy Metaverse</li>
+                            <li>🔮 Global Domination</li>
+                            <li>🔮 Fatdog Empire</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-black/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+                🐕‍🦺 JOIN THE PACK
+            </h2>
+            
+            <p class="text-xl mb-12 max-w-3xl mx-auto text-gray-300">
+                Mendozzy's army is growing stronger every day! Join thousands of diamond-pawed degens on our mission to the moon! 🚀
+            </p>
+
+            <!-- Social Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="bg-gradient-to-br from-purple-600/20 to-pink-400/20 backdrop-blur-sm rounded-xl p-6 border border-purple-500/30">
+                    <div class="text-3xl font-bold text-cyan-400">15.2K</div>
+                    <div class="text-sm text-gray-400">TELEGRAM MEMBERS</div>
+                </div>
+                <div class="bg-gradient-to-br from-cyan-400/20 to-purple-600/20 backdrop-blur-sm rounded-xl p-6 border border-cyan-400/30">
+                    <div class="text-3xl font-bold text-pink-400">8.7K</div>
+                    <div class="text-sm text-gray-400">TWITTER FOLLOWERS</div>
+                </div>
+                <div class="bg-gradient-to-br from-pink-400/20 to-cyan-400/20 backdrop-blur-sm rounded-xl p-6 border border-pink-400/30">
+                    <div class="text-3xl font-bold text-purple-400">3.1K</div>
+                    <div class="text-sm text-gray-400">DISCORD MEMBERS</div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-600/20 to-cyan-400/20 backdrop-blur-sm rounded-xl p-6 border border-purple-500/30">
+                    <div class="text-3xl font-bold text-cyan-400">2.5K</div>
+                    <div class="text-sm text-gray-400">HOLDERS</div>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://twitter.com/mendozzy_sol" target="_blank" class="bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 rounded-full font-bold hover:scale-110 transition-transform flex items-center gap-3 shadow-lg hover:shadow-blue-500/50">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                    TWITTER
+                </a>
+                
+                <a href="https://t.me/mendozzy_sol" target="_blank" class="bg-gradient-to-r from-blue-400 to-blue-500 px-8 py-4 rounded-full font-bold hover:scale-110 transition-transform flex items-center gap-3 shadow-lg hover:shadow-blue-400/50">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                    TELEGRAM
+                </a>
+                
+                <a href="https://discord.gg/mendozzy" target="_blank" class="bg-gradient-to-r from-indigo-500 to-purple-600 px-8 py-4 rounded-full font-bold hover:scale-110 transition-transform flex items-center gap-3 shadow-lg hover:shadow-indigo-500/50">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0190 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
+                    </svg>
+                    DISCORD
+                </a>
+            </div>
+
+            <div class="mt-12 text-lg text-gray-300">
+                💎 <span class="font-bold text-cyan-400">DIAMOND PAWS ONLY</span> 💎<br>
+                <span class="text-sm">Join the fattest, most based community on Solana!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Now Section -->
+    <section id="buy-now" class="py-20 bg-gradient-to-br from-purple-900 via-pink-900 to-purple-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+                🚀 APE IN NOW!
+            </h2>
+            
+            <p class="text-xl mb-12 max-w-2xl mx-auto text-gray-300">
+                Don't be a paper-handed beta! Mendozzy is ready to moon and you don't want to miss this rocket ship! 🌙
+            </p>
+
+            <!-- DEX Platforms -->
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <a href="https://jup.ag/swap/SOL-123355bonk" target="_blank" class="bg-gradient-to-r from-green-500 to-green-600 p-8 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-lg hover:shadow-green-500/50 flex items-center justify-center gap-4">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-green-600 font-bold text-lg">J</span>
+                    </div>
+                    BUY ON JUPITER
+                </a>
+                
+                <a href="https://dexscreener.com/solana/123355bonk" target="_blank" class="bg-gradient-to-r from-blue-500 to-blue-600 p-8 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-lg hover:shadow-blue-500/50 flex items-center justify-center gap-4">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-blue-600 font-bold text-lg">📊</span>
+                    </div>
+                    VIEW ON DEXSCREENER
+                </a>
+            </div>
+
+            <!-- How to Buy -->
+            <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30 text-left">
+                <h3 class="text-2xl font-bold mb-6 text-center text-cyan-400">📚 HOW TO BUY $MEND</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            1
+                        </div>
+                        <h4 class="text-lg font-bold text-pink-400 mb-2">GET SOL</h4>
+                        <p class="text-sm text-gray-300">Buy SOL on any major exchange and send it to your Solana wallet (Phantom, Solflare, etc.)</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            2
+                        </div>
+                        <h4 class="text-lg font-bold text-cyan-400 mb-2">CONNECT WALLET</h4>
+                        <p class="text-sm text-gray-300">Go to Jupiter or your favorite DEX and connect your Solana wallet</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            3
+                        </div>
+                        <h4 class="text-lg font-bold text-purple-400 mb-2">SWAP & HODL</h4>
+                        <p class="text-sm text-gray-300">Paste our contract address, swap SOL for $MEND, and diamond hand to the moon! 💎</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-yellow-400 font-bold text-lg">
+                ⚠️ ALWAYS DYOR | NOT FINANCIAL ADVICE | MEME RESPONSIBLY ⚠️
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/40 backdrop-blur-sm py-12 border-t border-purple-500/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-6">
+                    <span class="text-4xl">🐕</span>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">MENDOZZY</span>
+                </div>
+                
+                <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+                    Mendozzy ($MEND) - The fattest, most based dog on Solana! Join our pack of diamond-pawed degens on the ultimate moonshot! 🚀
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-6 mb-8">
+                    <a href="https://twitter.com/mendozzy_sol" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">Twitter</a>
+                    <a href="https://t.me/mendozzy_sol" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">Telegram</a>
+                    <a href="https://discord.gg/mendozzy" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">Discord</a>
+                    <a href="https://jup.ag/swap/SOL-123355bonk" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">Jupiter</a>
+                    <a href="https://dexscreener.com/solana/123355bonk" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">DexScreener</a>
+                </div>
+                
+                <div class="text-sm text-gray-500">
+                    © 2024 Mendozzy ($MEND). All rights reserved. | Built by the community, for the community 💎
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Copy contract address
+        const copyBtn = document.getElementById('copy-btn');
+        const contractAddress = document.getElementById('contract-address');
+        
+        copyBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(contractAddress.textContent.trim());
+                copyBtn.innerHTML = `
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    COPIED!
+                `;
+                copyBtn.classList.add('bg-green-500');
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = `
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        COPY
+                    `;
+                    copyBtn.classList.remove('bg-green-500');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Add some dynamic animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Hero section is always visible
+        document.querySelector('#hero').style.opacity = '1';
+        document.querySelector('#hero').style.transform = 'translateY(0)';
+    </script>
+</body>
+</html>
