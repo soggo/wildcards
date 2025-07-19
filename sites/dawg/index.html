@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$DAWG - Fat Dog Mendozza's Moonshot | Solana Memecoin</title>
+    <meta name="description" content="$DAWG is the fattest, most alpha dog on Solana! Join the pack and ride with Fat Dog Mendozza to the moon! 🚀🐕">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dawgcoin.sol/">
+    <meta property="og:title" content="$DAWG - Fat Dog Mendozza's Moonshot">
+    <meta property="og:description" content="The fattest, most alpha dog on Solana! Join the pack and ape in! 🚀🐕">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=1200&h=630&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dawgcoin.sol/">
+    <meta property="twitter:title" content="$DAWG - Fat Dog Mendozza's Moonshot">
+    <meta property="twitter:description" content="The fattest, most alpha dog on Solana! Join the pack and ape in! 🚀🐕">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=1200&h=630&fit=crop">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐕</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-fast': 'pulse 1s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-yellow-400 via-yellow-300 to-orange-400 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/20 backdrop-blur-md z-50 border-b border-yellow-300/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🐕</span>
+                    <span class="text-xl font-bold text-black">$DAWG</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="text-black hover:text-purple-600 font-medium transition-colors">Home</a>
+                    <a href="#contract" class="text-black hover:text-purple-600 font-medium transition-colors">Contract</a>
+                    <a href="#tokenomics" class="text-black hover:text-purple-600 font-medium transition-colors">Tokenomics</a>
+                    <a href="#community" class="text-black hover:text-purple-600 font-medium transition-colors">Community</a>
+                    <a href="#buy-now" class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors font-bold">BUY NOW</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#hero" class="block px-3 py-2 text-white hover:text-yellow-400 font-medium">Home</a>
+                <a href="#contract" class="block px-3 py-2 text-white hover:text-yellow-400 font-medium">Contract</a>
+                <a href="#tokenomics" class="block px-3 py-2 text-white hover:text-yellow-400 font-medium">Tokenomics</a>
+                <a href="#community" class="block px-3 py-2 text-white hover:text-yellow-400 font-medium">Community</a>
+                <a href="#buy-now" class="block px-3 py-2 bg-purple-600 text-white rounded-lg font-bold text-center">BUY NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-20 pb-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="animate-float mb-8">
+                <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=300&h=300&fit=crop&crop=face" 
+                     alt="Fat Dog Mendozza" 
+                     class="w-48 h-48 mx-auto rounded-full border-8 border-black shadow-2xl">
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl font-black text-black mb-4 leading-tight">
+                $DAWG
+            </h1>
+            
+            <p class="text-2xl md:text-3xl font-bold text-black mb-2">
+                FAT DOG MENDOZZA'S MOONSHOT 🚀
+            </p>
+            
+            <p class="text-xl md:text-2xl text-black/80 mb-8 max-w-3xl mx-auto">
+                The fattest, most alpha dog on Solana is ready to take his pack to the moon! 
+                Diamond paws only! 💎🐾
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="#buy-now" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-xl font-bold transition-all transform hover:scale-105 animate-pulse-fast shadow-lg">
+                    APE IN NOW! 🦍
+                </a>
+                <a href="#contract" class="bg-black hover:bg-gray-800 text-yellow-400 px-8 py-4 rounded-full text-xl font-bold transition-all transform hover:scale-105 shadow-lg">
+                    GET CONTRACT 📋
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto text-black">
+                <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-2xl font-bold">🔥</div>
+                    <div class="text-sm font-medium">BASED AF</div>
+                </div>
+                <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-2xl font-bold">💎</div>
+                    <div class="text-sm font-medium">DIAMOND HANDS</div>
+                </div>
+                <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-2xl font-bold">🚀</div>
+                    <div class="text-sm font-medium">TO THE MOON</div>
+                </div>
+                <div class="bg-black/20 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-2xl font-bold">🐕</div>
+                    <div class="text-sm font-medium">GOOD BOY</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contract Section -->
+    <section id="contract" class="py-16 bg-black/10 backdrop-blur-sm">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-black mb-8">
+                CONTRACT ADDRESS 📋
+            </h2>
+            
+            <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 mb-8">
+                <p class="text-sm text-black/80 mb-4 font-medium">SOLANA CONTRACT ADDRESS:</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <code id="contract-address" class="bg-black text-yellow-400 px-6 py-3 rounded-lg font-mono text-lg break-all">
+                        12333355bonk
+                    </code>
+                    <button id="copy-btn" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-bold transition-all transform hover:scale-105 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        COPY
+                    </button>
+                </div>
+            </div>
+
+            <p class="text-black/80 text-lg">
+                Always verify the contract address before aping in! 
+                Fat Dog Mendozza protects his pack! 🛡️
+            </p>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-black text-black text-center mb-12">
+                TOKENOMICS 📊
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-black mb-6">Supply Details</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-black/80">Total Supply:</span>
+                            <span class="font-bold text-black">1,000,000,000 $DAWG</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-black/80">Circulating Supply:</span>
+                            <span class="font-bold text-black">850,000,000 $DAWG</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-black/80">Burned:</span>
+                            <span class="font-bold text-purple-600">50,000,000 $DAWG 🔥</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-black/80">Liquidity Locked:</span>
+                            <span class="font-bold text-cyan-400">100,000,000 $DAWG 🔒</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-black mb-6">Distribution</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-black/80">Community:</span>
+                            <span class="font-bold text-black">70%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-black/80">Liquidity Pool:</span>
+                            <span class="font-bold text-black">15%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-black/80">Marketing:</span>
+                            <span class="font-bold text-black">10%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-black/80">Burned:</span>
+                            <span class="font-bold text-purple-600">5% 🔥</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 text-center">
+                <h3 class="text-2xl font-bold text-black mb-4">Fat Dog Features</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="text-4xl mb-2">🔥</div>
+                        <h4 class="font-bold text-black mb-2">Auto-Burn</h4>
+                        <p class="text-black/80 text-sm">2% of every transaction gets burned forever</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-4xl mb-2">💎</div>
+                        <h4 class="font-bold text-black mb-2">Holder Rewards</h4>
+                        <p class="text-black/80 text-sm">Diamond hands get rewarded with reflections</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-4xl mb-2">🚀</div>
+                        <h4 class="font-bold text-black mb-2">Moon Mission</h4>
+                        <p class="text-black/80 text-sm">Anti-whale mechanics for sustainable growth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-16 bg-black/10 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-black mb-8">
+                JOIN THE PACK 🐕‍🦺
+            </h2>
+            
+            <p class="text-xl text-black/80 mb-12 max-w-3xl mx-auto">
+                Fat Dog Mendozza's pack is growing stronger every day! 
+                Join thousands of diamond-pawed degens on our mission to the moon!
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                <div class="bg-black/20 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">15K+</div>
+                    <div class="text-black font-medium">Holders</div>
+                </div>
+                <div class="bg-black/20 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-3xl font-bold text-cyan-400 mb-2">25K+</div>
+                    <div class="text-black font-medium">Telegram</div>
+                </div>
+                <div class="bg-black/20 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-3xl font-bold text-pink-400 mb-2">30K+</div>
+                    <div class="text-black font-medium">Twitter</div>
+                </div>
+                <div class="bg-black/20 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">$2M+</div>
+                    <div class="text-black font-medium">Market Cap</div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://twitter.com/dawgcoin_sol" target="_blank" class="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                    Twitter
+                </a>
+                <a href="https://t.me/dawgcoin_sol" target="_blank" class="bg-cyan-400 hover:bg-cyan-500 text-black px-6 py-3 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                    Telegram
+                </a>
+                <a href="https://discord.gg/dawgcoin" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
+                    </svg>
+                    Discord
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Now Section -->
+    <section id="buy-now" class="py-16">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-black mb-8">
+                BUY $DAWG NOW! 🚀
+            </h2>
+            
+            <p class="text-xl text-black/80 mb-12 max-w-3xl mx-auto">
+                Don't miss the rocket ship! Fat Dog Mendozza is taking his pack to the moon. 
+                Choose your favorite DEX and ape in now!
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <a href="https://jup.ag/swap/SOL-12333355bonk" target="_blank" class="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white p-6 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+                    <div class="text-3xl mb-2">🪐</div>
+                    <div>Jupiter</div>
+                    <div class="text-sm opacity-80">Best Rates</div>
+                </a>
+                <a href="https://app.uniswap.org/#/swap?outputCurrency=12333355bonk" target="_blank" class="bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white p-6 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+                    <div class="text-3xl mb-2">🦄</div>
+                    <div>Uniswap</div>
+                    <div class="text-sm opacity-80">Most Popular</div>
+                </a>
+                <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=12333355bonk" target="_blank" class="bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-500 hover:to-cyan-600 text-white p-6 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+                    <div class="text-3xl mb-2">⚡</div>
+                    <div>Raydium</div>
+                    <div class="text-sm opacity-80">Lightning Fast</div>
+                </a>
+                <a href="https://pancakeswap.finance/swap?outputCurrency=12333355bonk" target="_blank" class="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black p-6 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+                    <div class="text-3xl mb-2">🥞</div>
+                    <div>PancakeSwap</div>
+                    <div class="text-sm opacity-80">Cross-Chain</div>
+                </a>
+            </div>
+
+            <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold text-black mb-4">How to Buy $DAWG</h3>
+                <div class="text-left space-y-4">
+                    <div class="flex items-start gap-3">
+                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                        <p class="text-black">Get a Solana wallet (Phantom, Solflare, etc.)</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                        <p class="text-black">Buy SOL on your favorite exchange</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                        <p class="text-black">Connect your wallet to Jupiter or Raydium</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
+                        <p class="text-black">Swap SOL for $DAWG and join the pack! 🐕</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/20 backdrop-blur-sm py-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center space-x-2 mb-6">
+                <span class="text-4xl">🐕</span>
+                <span class="text-2xl font-bold text-black">$DAWG</span>
+            </div>
+            
+            <p class="text-black/80 mb-6 max-w-2xl mx-auto">
+                Fat Dog Mendozza's mission is to bring the pack together and reach for the stars. 
+                This is not financial advice. Always DYOR before aping in!
+            </p>
+
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://twitter.com/dawgcoin_sol" target="_blank" class="text-black hover:text-purple-600 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="https://t.me/dawgcoin_sol" target="_blank" class="text-black hover:text-cyan-400 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                </a>
+                <a href="https://discord.gg/dawgcoin" target="_blank" class="text-black hover:text-purple-600 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="border-t border-black/20 pt-6">
+                <p class="text-black/60 text-sm">
+                    © 2024 $DAWG. Fat Dog Mendozza's pack is going to the moon! 🚀
+                </p>
+                <p class="text-black/60 text-xs mt-2">
+                    This is a meme token with no intrinsic value or expectation of financial return.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Copy contract address
+        const copyBtn = document.getElementById('copy-btn');
+        const contractAddress = document.getElementById('contract-address');
+        
+        copyBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(contractAddress.textContent.trim());
+                copyBtn.innerHTML = `
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    COPIED!
+                `;
+                copyBtn.classList.add('bg-green-600');
+                copyBtn.classList.remove('bg-purple-600');
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = `
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        COPY
+                    `;
+                    copyBtn.classList.remove('bg-green-600');
+                    copyBtn.classList.add('bg-purple-600');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-black/40');
+            } else {
+                nav.classList.remove('bg-black/40');
+            }
+        });
+
+        // Track buy button clicks
+        document.querySelectorAll('a[href*="swap"], a[href*="jup.ag"]').forEach(link => {
+            link.addEventListener('click', () => {
+                console.log('Buy button clicked:', link.href);
+                // Add analytics tracking here
+            });
+        });
+    </script>
+</body>
+</html>
