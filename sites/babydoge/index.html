@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BabyDoge Flash - The Cutest Lightning Strike on Solana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .fredoka {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .floating-delayed {
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse-glow {
+            from { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4); }
+            to { box-shadow: 0 0 40px rgba(168, 85, 247, 0.8), 0 0 60px rgba(168, 85, 247, 0.4); }
+        }
+        
+        .lightning-bg {
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899);
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .paw-print {
+            position: absolute;
+            opacity: 0.1;
+            animation: paw-fade 4s ease-in-out infinite;
+        }
+        
+        @keyframes paw-fade {
+            0%, 100% { opacity: 0.1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.1); }
+        }
+        
+        .bounce-in {
+            animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        @keyframes bounce-in {
+            0% { transform: scale(0) rotate(180deg); opacity: 0; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        
+        .slide-up {
+            animation: slide-up 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        @keyframes slide-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .contract-box {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(6, 182, 212, 0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+        
+        .doge-card {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(168, 85, 247, 0.1));
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(236, 72, 153, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .doge-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            border-color: rgba(236, 72, 153, 0.5);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white relative">
+    <!-- Floating Paw Prints Background -->
+    <div class="paw-print top-20 left-10 text-6xl">🐾</div>
+    <div class="paw-print top-40 right-20 text-4xl">🐾</div>
+    <div class="paw-print bottom-40 left-1/4 text-5xl">🐾</div>
+    <div class="paw-print top-1/3 right-1/3 text-3xl">🐾</div>
+    <div class="paw-print bottom-20 right-10 text-6xl">🐾</div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-purple-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="text-4xl wiggle">🐕⚡</div>
+                    <span class="fredoka text-2xl bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        BabyDoge Flash
+                    </span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-purple-400 transition-colors">About</a>
+                    <a href="#tokenomics" class="hover:text-cyan-400 transition-colors">Tokenomics</a>
+                    <a href="#roadmap" class="hover:text-pink-400 transition-colors">Roadmap</a>
+                    <a href="#community" class="hover:text-purple-400 transition-colors">Community</a>
+                </div>
+                <button class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Unique Layout -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="lightning-bg absolute inset-0 opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Side - Content -->
+                <div class="text-center lg:text-left space-y-8">
+                    <div class="bounce-in">
+                        <h1 class="fredoka text-6xl md:text-8xl lg:text-9xl leading-none">
+                            <span class="block text-purple-400">Baby</span>
+                            <span class="block text-cyan-400">Doge</span>
+                            <span class="block text-pink-400 text-5xl md:text-6xl lg:text-7xl">⚡ Flash</span>
+                        </h1>
+                    </div>
+                    
+                    <div class="slide-up" style="animation-delay: 0.3s;">
+                        <p class="text-xl md:text-2xl text-gray-300 max-w-lg">
+                            The most adorable lightning strike on Solana! 
+                            <span class="text-purple-400">Much cute</span>, 
+                            <span class="text-cyan-400">very fast</span>, 
+                            <span class="text-pink-400">wow gains!</span>
+                        </p>
+                    </div>
+                    
+                    <!-- Contract Address -->
+                    <div class="slide-up contract-box rounded-2xl p-6" style="animation-delay: 0.6s;">
+                        <div class="flex items-center justify-between flex-wrap gap-4">
+                            <div>
+                                <p class="text-sm text-gray-400 mb-2">Contract Address</p>
+                                <p class="font-mono text-sm md:text-base break-all" id="contract-address">
+                                    DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk
+                                </p>
+                            </div>
+                            <button onclick="copyContract()" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition-colors pulse-glow">
+                                <i class="fas fa-copy mr-2"></i>Copy
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="slide-up flex flex-wrap gap-4 justify-center lg:justify-start" style="animation-delay: 0.9s;">
+                        <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 pulse-glow">
+                            🚀 Buy Now
+                        </button>
+                        <button class="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105">
+                            📊 Chart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Animated Doge -->
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div class="floating text-9xl md:text-[12rem] lg:text-[15rem]">
+                            🐕
+                        </div>
+                        <div class="absolute -top-8 -right-8 floating-delayed text-6xl">
+                            ⚡
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 floating text-4xl">
+                            💎
+                        </div>
+                        <div class="absolute top-1/2 -right-12 floating-delayed text-3xl">
+                            🚀
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Cards -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="fredoka text-5xl md:text-6xl mb-6">
+                    <span class="bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">
+                        Why BabyDoge Flash?
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Born from the cutest corner of the crypto universe, BabyDoge Flash combines 
+                    the adorable charm of baby doge with lightning-fast Solana transactions!
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="doge-card rounded-3xl p-8 text-center">
+                    <div class="text-6xl mb-6 floating">⚡</div>
+                    <h3 class="fredoka text-2xl mb-4 text-purple-400">Lightning Fast</h3>
+                    <p class="text-gray-300">
+                        Powered by Solana's blazing speed. Transactions faster than a puppy chasing its tail!
+                    </p>
+                </div>
+                
+                <div class="doge-card rounded-3xl p-8 text-center">
+                    <div class="text-6xl mb-6 floating-delayed">🐕</div>
+                    <h3 class="fredoka text-2xl mb-4 text-cyan-400">Much Cute</h3>
+                    <p class="text-gray-300">
+                        The most adorable token in the crypto space. Cuteness overload guaranteed!
+                    </p>
+                </div>
+                
+                <div class="doge-card rounded-3xl p-8 text-center">
+                    <div class="text-6xl mb-6 floating">💎</div>
+                    <h3 class="fredoka text-2xl mb-4 text-pink-400">Diamond Paws</h3>
+                    <p class="text-gray-300">
+                        Built for holders with diamond paws. HODL like a good boy!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-20 bg-gradient-to-r from-purple-900/20 to-pink-900/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="fredoka text-5xl md:text-6xl mb-6 text-cyan-400">
+                    Puppenomics 🐾
+                </h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-2xl">
+                            🎯
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-purple-400">Total Supply</h3>
+                            <p class="text-gray-300">1,000,000,000 FLASH tokens</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center text-2xl">
+                            🔥
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-400">Burned</h3>
+                            <p class="text-gray-300">50% burned forever (much wow!)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center text-2xl">
+                            💧
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-pink-400">Liquidity</h3>
+                            <p class="text-gray-300">30% locked in liquidity pool</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center text-2xl">
+                            👥
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-400">Community</h3>
+                            <p class="text-gray-300">20% for the good boys and girls</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="relative inline-block">
+                        <div class="w-80 h-80 rounded-full bg-gradient-to-r from-purple-600 via-cyan-400 to-pink-600 p-1">
+                            <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-8xl mb-4 floating">🐕‍🦺</div>
+                                    <p class="fredoka text-2xl text-purple-400">Fair Launch</p>
+                                    <p class="text-gray-300">No presale, no team tokens</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="fredoka text-5xl md:text-6xl mb-6">
+                    <span class="bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                        Puppy Roadmap
+                    </span>
+                </h2>
+            </div>
+            
+            <div class="space-y-12">
+                <div class="flex items-center space-x-8">
+                    <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center text-3xl flex-shrink-0">
+                        ✅
+                    </div>
+                    <div class="doge-card rounded-2xl p-6 flex-1">
+                        <h3 class="fredoka text-2xl mb-2 text-green-400">Phase 1: Birth of Baby</h3>
+                        <p class="text-gray-300">Token launch, community building, first woofs on social media</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-8">
+                    <div class="w-20 h-20 bg-yellow-600 rounded-full flex items-center justify-center text-3xl flex-shrink-0 pulse-glow">
+                        🔄
+                    </div>
+                    <div class="doge-card rounded-2xl p-6 flex-1">
+                        <h3 class="fredoka text-2xl mb-2 text-yellow-400">Phase 2: Growing Up</h3>
+                        <p class="text-gray-300">DEX listings, partnerships, community rewards program</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-8">
+                    <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center text-3xl flex-shrink-0">
+                        🎯
+                    </div>
+                    <div class="doge-card rounded-2xl p-6 flex-1">
+                        <h3 class="fredoka text-2xl mb-2 text-purple-400">Phase 3: Big Dog Energy</h3>
+                        <p class="text-gray-300">NFT collection, staking rewards, mobile app development</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-8">
+                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center text-3xl flex-shrink-0">
+                        🚀
+                    </div>
+                    <div class="doge-card rounded-2xl p-6 flex-1">
+                        <h3 class="fredoka text-2xl mb-2 text-cyan-400">Phase 4: To The Moon</h3>
+                        <p class="text-gray-300">Major exchange listings, metaverse integration, global domination</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-gradient-to-r from-cyan-900/20 to-purple-900/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="fredoka text-5xl md:text-6xl mb-8">
+                <span class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                    Join The Pack! 🐕‍🦺
+                </span>
+            </h2>
+            
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                Every good boy and girl needs a pack! Join our growing community of diamond-pawed holders.
+            </p>
+            
+            <div class="grid md:grid-cols-4 gap-6 mb-12">
+                <a href="#" class="doge-card rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">🐦</div>
+                    <h3 class="font-bold text-cyan-400">Twitter</h3>
+                    <p class="text-sm text-gray-400">@BabyDogeFlash</p>
+                </a>
+                
+                <a href="#" class="doge-card rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="font-bold text-purple-400">Telegram</h3>
+                    <p class="text-sm text-gray-400">t.me/babydogeflash</p>
+                </a>
+                
+                <a href="#" class="doge-card rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">🎮</div>
+                    <h3 class="font-bold text-pink-400">Discord</h3>
+                    <p class="text-sm text-gray-400">Join our server</p>
+                </a>
+                
+                <a href="#" class="doge-card rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="font-bold text-yellow-400">Website</h3>
+                    <p class="text-sm text-gray-400">babydogeflash.com</p>
+                </a>
+            </div>
+            
+            <div class="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-3xl p-8 backdrop-blur-sm border border-purple-500/30">
+                <h3 class="fredoka text-3xl mb-4 text-purple-400">Ready to Flash? ⚡</h3>
+                <p class="text-lg text-gray-300 mb-6">
+                    Don't let this adorable opportunity slip away! Join the fastest growing baby doge community on Solana.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 pulse-glow">
+                        🚀 Buy BabyDoge Flash
+                    </button>
+                    <button class="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105">
+                        📊 View Chart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-purple-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-6">
+                <div class="text-4xl wiggle">🐕⚡</div>
+                <span class="fredoka text-2xl bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    BabyDoge Flash
+                </span>
+            </div>
+            <p class="text-gray-400 mb-4">
+                The cutest lightning strike on Solana blockchain
+            </p>
+            <p class="text-sm text-gray-500">
+                © 2024 BabyDoge Flash. All rights reserved. Much love, very community, wow!
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Copy contract address functionality
+        function copyContract() {
+            const contractAddress = document.getElementById('contract-address').textContent;
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                // Show success feedback
+                const button = event.target.closest('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
+                button.classList.add('bg-green-600');
+                button.classList.remove('bg-purple-600');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-green-600');
+                    button.classList.add('bg-purple-600');
+                }, 2000);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.doge-card, section > div > div').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive sparkles on click
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('button')) {
+                createSparkle(e.clientX, e.clientY);
+            }
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = '✨';
+            sparkle.style.position = 'fixed';
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.zIndex = '9999';
+            sparkle.style.fontSize = '20px';
+            sparkle.style.animation = 'sparkle 1s ease-out forwards';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        }
+
+        // Add sparkle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkle {
+                0% { transform: scale(0) rotate(0deg); opacity: 1; }
+                50% { transform: scale(1) rotate(180deg); opacity: 1; }
+                100% { transform: scale(0) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
