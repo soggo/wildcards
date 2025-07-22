@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STONKS - Trading Memes & Dreams On-Chain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;700&display=swap');
+        
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+        
+        .stonks-gradient {
+            background: linear-gradient(135deg, #9333ea 0%, #22d3ee 50%, #f472b6 100%);
+        }
+        
+        .terminal-glow {
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+        }
+        
+        .chart-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 3s ease-in-out forwards;
+        }
+        
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .glitch {
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+        
+        .matrix-bg {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(34, 211, 238, 0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-space overflow-x-hidden">
+    <!-- Terminal Header -->
+    <div class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-sm border-b border-cyan-400/30">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span class="font-mono text-cyan-400 ml-4">~/stonks/terminal</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 font-mono text-sm">
+                    <a href="#chart" class="text-cyan-400 hover:text-pink-400 transition-colors">CHART</a>
+                    <a href="#tokenomics" class="text-cyan-400 hover:text-pink-400 transition-colors">DATA</a>
+                    <a href="#roadmap" class="text-cyan-400 hover:text-pink-400 transition-colors">ROADMAP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Terminal Interface -->
+    <div class="pt-16 min-h-screen matrix-bg">
+        <!-- Hero Terminal -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="bg-black/80 border border-cyan-400/50 rounded-lg terminal-glow p-8 mb-12">
+                <div class="font-mono text-green-400 mb-4">
+                    <span class="text-cyan-400">user@solana:~$</span> cat stonks.meme
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-6xl font-bold mb-6 glitch">
+                            <span class="stonks-gradient bg-clip-text text-transparent">STONKS</span>
+                        </h1>
+                        <div class="font-mono text-xl mb-8 text-cyan-400">
+                            > Trading memes & real stonks on-chain<br>
+                            > Diamond hands only 💎<br>
+                            > To the moon and beyond 🚀
+                        </div>
+                        
+                        <!-- Contract Address Terminal Style -->
+                        <div class="bg-gray-900 border border-purple-600/50 rounded p-4 mb-8">
+                            <div class="text-purple-400 font-mono text-sm mb-2">CONTRACT_ADDRESS:</div>
+                            <div class="flex items-center justify-between bg-black rounded p-3">
+                                <span class="font-mono text-xs text-cyan-400 break-all" id="contractAddress">
+                                    27U6sAYSDUJLpeCTTL5gW2wSwLGNRZRZKWJEqTWGbonk
+                                </span>
+                                <button onclick="copyContract()" class="ml-2 text-pink-400 hover:text-pink-300 transition-colors">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Trading Buttons -->
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://jup.ag/swap/SOL-27U6sAYSDUJLpeCTTL5gW2wSwLGNRZRZKWJEqTWGbonk" 
+                               class="bg-gradient-to-r from-purple-600 to-cyan-400 px-6 py-3 rounded-lg font-bold hover:scale-105 transition-transform">
+                                BUY ON JUPITER
+                            </a>
+                            <a href="https://dexscreener.com/solana/27U6sAYSDUJLpeCTTL5gW2wSwLGNRZRZKWJEqTWGbonk" 
+                               class="border border-pink-400 text-pink-400 px-6 py-3 rounded-lg font-bold hover:bg-pink-400 hover:text-black transition-all">
+                                VIEW CHART
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ASCII Art Chart -->
+                    <div class="bg-gray-900 border border-green-400/50 rounded-lg p-6 font-mono text-sm">
+                        <div class="text-green-400 mb-4">STONKS PRICE CHART (LIVE)</div>
+                        <div class="text-cyan-400 mb-2">Price: $0.00420 (+69.420%)</div>
+                        <div class="text-green-400 text-xs leading-tight">
+                            <pre id="asciiChart" class="overflow-hidden"></pre>
+                        </div>
+                        <div class="mt-4 text-pink-400 text-xs">
+                            📈 ONLY GOES UP 📈
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Terminal -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-black/80 border border-purple-600/50 rounded-lg p-6 terminal-glow">
+                    <div class="font-mono text-purple-400 text-sm mb-2">MARKET_CAP</div>
+                    <div class="text-3xl font-bold text-white">$42.0M</div>
+                    <div class="text-green-400 text-sm">+420% (24h)</div>
+                </div>
+                <div class="bg-black/80 border border-cyan-400/50 rounded-lg p-6 terminal-glow">
+                    <div class="font-mono text-cyan-400 text-sm mb-2">HOLDERS</div>
+                    <div class="text-3xl font-bold text-white">6,969</div>
+                    <div class="text-green-400 text-sm">Diamond Hands 💎</div>
+                </div>
+                <div class="bg-black/80 border border-pink-400/50 rounded-lg p-6 terminal-glow">
+                    <div class="font-mono text-pink-400 text-sm mb-2">LIQUIDITY</div>
+                    <div class="text-3xl font-bold text-white">$1.2M</div>
+                    <div class="text-green-400 text-sm">Locked Forever 🔒</div>
+                </div>
+            </div>
+
+            <!-- Tokenomics Terminal -->
+            <div id="tokenomics" class="bg-black/80 border border-cyan-400/50 rounded-lg terminal-glow p-8 mb-12">
+                <div class="font-mono text-cyan-400 mb-6">
+                    <span class="text-green-400">user@solana:~$</span> ./tokenomics.sh
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-purple-400">TOKENOMICS.EXE</h2>
+                        <div class="space-y-4 font-mono">
+                            <div class="flex justify-between">
+                                <span class="text-cyan-400">Total Supply:</span>
+                                <span class="text-white">1,000,000,000 STONKS</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-cyan-400">Liquidity Pool:</span>
+                                <span class="text-green-400">90% (LOCKED)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-cyan-400">Marketing:</span>
+                                <span class="text-pink-400">5% (MEMES)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-cyan-400">Team:</span>
+                                <span class="text-purple-400">5% (HODL)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-cyan-400">Tax:</span>
+                                <span class="text-red-400">0% (NO RUG)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-900 border border-green-400/50 rounded-lg p-6">
+                        <div class="text-green-400 font-mono mb-4">STONKS ALGORITHM:</div>
+                        <div class="font-mono text-sm text-cyan-400">
+                            <div>if (market == "red") {</div>
+                            <div class="ml-4">stonks.goUp();</div>
+                            <div>} else if (market == "green") {</div>
+                            <div class="ml-4">stonks.goUp();</div>
+                            <div>} else {</div>
+                            <div class="ml-4">stonks.goUp();</div>
+                            <div>}</div>
+                            <div class="mt-4 text-pink-400">// STONKS ONLY GO UP 📈</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roadmap Terminal -->
+            <div id="roadmap" class="bg-black/80 border border-pink-400/50 rounded-lg terminal-glow p-8 mb-12">
+                <div class="font-mono text-pink-400 mb-6">
+                    <span class="text-green-400">user@solana:~$</span> git log --oneline roadmap
+                </div>
+                
+                <h2 class="text-3xl font-bold mb-8 text-pink-400">ROADMAP.MD</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-4 h-4 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                            <h3 class="font-bold text-green-400 mb-2">PHASE 1: LAUNCH 🚀</h3>
+                            <p class="text-gray-300 font-mono text-sm">✅ Deploy contract ✅ Create memes ✅ Build community</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-4 h-4 bg-cyan-400 rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
+                        <div>
+                            <h3 class="font-bold text-cyan-400 mb-2">PHASE 2: MOON MISSION 🌙</h3>
+                            <p class="text-gray-300 font-mono text-sm">🔄 CEX listings 🔄 Partnerships 🔄 NFT collection</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-4 h-4 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                            <h3 class="font-bold text-purple-400 mb-2">PHASE 3: MARS COLONY 🔴</h3>
+                            <p class="text-gray-300 font-mono text-sm">⏳ DeFi integration ⏳ Staking rewards ⏳ DAO governance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-4 h-4 bg-pink-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <div>
+                            <h3 class="font-bold text-pink-400 mb-2">PHASE 4: GALAXY DOMINATION 🌌</h3>
+                            <p class="text-gray-300 font-mono text-sm">🔮 Metaverse integration 🔮 AI trading bot 🔮 World peace</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links Terminal -->
+            <div class="bg-black/80 border border-green-400/50 rounded-lg terminal-glow p-8">
+                <div class="font-mono text-green-400 mb-6">
+                    <span class="text-cyan-400">user@solana:~$</span> ls -la social/
+                </div>
+                
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold mb-8 text-green-400">JOIN THE STONKS ARMY</h2>
+                    
+                    <div class="flex justify-center space-x-8 mb-8">
+                        <a href="https://twitter.com/stonks_sol" class="text-cyan-400 hover:text-cyan-300 transition-colors text-4xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://t.me/stonks_sol" class="text-cyan-400 hover:text-cyan-300 transition-colors text-4xl">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://discord.gg/stonks" class="text-cyan-400 hover:text-cyan-300 transition-colors text-4xl">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="font-mono text-pink-400 text-lg">
+                        > HODL TOGETHER, MOON TOGETHER 🚀
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Terminal -->
+    <div class="bg-black border-t border-cyan-400/30 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="font-mono text-cyan-400 mb-4">
+                <span class="text-green-400">user@solana:~$</span> echo "STONKS - Not financial advice, just memes"
+            </div>
+            <p class="text-gray-400 text-sm">
+                © 2024 STONKS. All rights reserved. This is a meme token. Do your own research.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Copy contract address
+        function copyContract() {
+            const address = document.getElementById('contractAddress').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Contract address copied to clipboard!');
+            });
+        }
+
+        // Generate ASCII chart
+        function generateASCIIChart() {
+            const chart = document.getElementById('asciiChart');
+            const lines = [
+                "    📈                    ",
+                "  /                      ",
+                " /                   📈  ",
+                "/               /        ",
+                "           /             ",
+                "      /                  ",
+                " /                       ",
+                "/________________________",
+                "Jan  Feb  Mar  Apr  May  "
+            ];
+            
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < lines.length) {
+                    chart.textContent += lines[i] + '\n';
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 200);
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            setTimeout(generateASCIIChart, 1000);
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Terminal typing effect
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Add some random glitch effects
+        setInterval(() => {
+            const glitchElements = document.querySelectorAll('.glitch');
+            glitchElements.forEach(el => {
+                if (Math.random() < 0.1) {
+                    el.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+                    setTimeout(() => {
+                        el.style.transform = 'translate(0, 0)';
+                    }, 100);
+                }
+            });
+        }, 2000);
+    </script>
+</body>
+</html>
