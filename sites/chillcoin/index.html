@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chillcoin - The Most Relaxed Token on Solana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #9333ea 0%, #22d3ee 50%, #f472b6 100%); }
+        .floating { animation: floating 6s ease-in-out infinite; }
+        .floating-delayed { animation: floating 6s ease-in-out infinite 2s; }
+        .floating-slow { animation: floating 8s ease-in-out infinite 1s; }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(147, 51, 234, 0.6); }
+        }
+        .slide-in { animation: slideIn 1s ease-out forwards; opacity: 0; }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .zen-circle { 
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, transparent 70%);
+            animation: zen-pulse 4s ease-in-out infinite;
+        }
+        @keyframes zen-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Floating Navigation -->
+    <nav class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-black/20 backdrop-blur-lg rounded-full px-8 py-3 border border-purple-500/30">
+        <div class="flex items-center space-x-8">
+            <div class="text-xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                chillcoin
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#vibe" class="hover:text-cyan-400 transition-colors">vibe</a>
+                <a href="#zen" class="hover:text-purple-400 transition-colors">zen</a>
+                <a href="#flow" class="hover:text-pink-400 transition-colors">flow</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Asymmetric Layout -->
+    <section class="min-h-screen relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 gradient-bg opacity-20"></div>
+        <div class="zen-circle absolute top-20 right-20 w-96 h-96 rounded-full"></div>
+        <div class="zen-circle absolute bottom-20 left-20 w-64 h-64 rounded-full"></div>
+        
+        <div class="relative z-10 container mx-auto px-6 pt-32">
+            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+                <!-- Left Side - Content -->
+                <div class="space-y-8">
+                    <div class="slide-in">
+                        <h1 class="text-7xl lg:text-9xl font-light leading-none">
+                            <span class="block text-purple-400">chill</span>
+                            <span class="block text-cyan-400 ml-12">coin</span>
+                        </h1>
+                        <p class="text-2xl text-gray-300 mt-6 font-light">
+                            it's really just a chill coin ✨
+                        </p>
+                    </div>
+                    
+                    <div class="slide-in" style="animation-delay: 0.3s;">
+                        <p class="text-lg text-gray-400 max-w-md leading-relaxed">
+                            No stress, no rush, no complicated roadmaps. Just pure, 
+                            relaxed vibes on the Solana blockchain. Sometimes the best 
+                            investment is peace of mind.
+                        </p>
+                    </div>
+
+                    <!-- Contract Address Card -->
+                    <div class="slide-in bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20" style="animation-delay: 0.6s;">
+                        <p class="text-sm text-gray-400 mb-2">Contract Address</p>
+                        <div class="flex items-center justify-between bg-gray-800/50 rounded-lg p-3">
+                            <code class="text-cyan-400 text-sm font-mono" id="contract">DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk</code>
+                            <button onclick="copyContract()" class="ml-3 bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded text-sm transition-colors">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="slide-in flex flex-wrap gap-4" style="animation-delay: 0.9s;">
+                        <a href="https://jup.ag/swap/SOL-DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" 
+                           class="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 pulse-glow">
+                            Buy on Jupiter
+                        </a>
+                        <a href="https://dexscreener.com/solana/DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" 
+                           class="border border-pink-400 hover:bg-pink-400 hover:text-gray-900 px-8 py-4 rounded-full font-semibold transition-all">
+                            View Chart
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side - Visual Elements -->
+                <div class="relative">
+                    <div class="floating absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500 to-transparent rounded-full opacity-30"></div>
+                    <div class="floating-delayed absolute bottom-20 left-10 w-24 h-24 bg-gradient-to-br from-cyan-500 to-transparent rounded-full opacity-40"></div>
+                    <div class="floating-slow absolute top-1/2 right-1/4 w-16 h-16 bg-gradient-to-br from-pink-500 to-transparent rounded-full opacity-50"></div>
+                    
+                    <!-- Central Zen Element -->
+                    <div class="relative z-10 text-center">
+                        <div class="inline-block p-12 rounded-full bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm border border-white/10">
+                            <div class="text-8xl">🧘‍♂️</div>
+                        </div>
+                        <p class="mt-6 text-xl text-gray-300 font-light">just vibing on solana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zen Philosophy Section -->
+    <section id="zen" class="py-32 relative">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-5xl font-light mb-12 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                    The Chill Philosophy
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 mt-16">
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all">
+                        <div class="text-4xl mb-4">🌊</div>
+                        <h3 class="text-xl font-semibold mb-4 text-cyan-400">Go with the Flow</h3>
+                        <p class="text-gray-400">No forced pumps, no artificial hype. Just natural, organic growth driven by genuine community vibes.</p>
+                    </div>
+                    
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 transition-all">
+                        <div class="text-4xl mb-4">🕯️</div>
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Inner Peace</h3>
+                        <p class="text-gray-400">Investing shouldn't be stressful. Find your zen in the chaos of crypto with chillcoin's calming presence.</p>
+                    </div>
+                    
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-pink-500/20 hover:border-pink-500/40 transition-all">
+                        <div class="text-4xl mb-4">🌸</div>
+                        <h3 class="text-xl font-semibold mb-4 text-pink-400">Mindful Growth</h3>
+                        <p class="text-gray-400">Every transaction is a moment of mindfulness. Slow, steady, and sustainable progress.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics in Zen Style -->
+    <section id="vibe" class="py-32 bg-gradient-to-br from-purple-900/20 to-cyan-900/20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-5xl font-light text-center mb-16 bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+                    Chill Tokenomics
+                </h2>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/20">
+                            <h3 class="text-2xl font-semibold mb-4 text-purple-400">Total Supply</h3>
+                            <p class="text-4xl font-light text-white">1,000,000,000</p>
+                            <p class="text-gray-400 mt-2">One billion tokens of pure chill</p>
+                        </div>
+                        
+                        <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
+                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Distribution</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span>Community</span>
+                                    <span class="text-cyan-400">80%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Liquidity Pool</span>
+                                    <span class="text-purple-400">15%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Team (Locked)</span>
+                                    <span class="text-pink-400">5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="relative inline-block">
+                            <div class="w-64 h-64 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 p-1">
+                                <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <div class="text-6xl mb-4">☯️</div>
+                                        <p class="text-lg text-gray-300">Perfectly Balanced</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="flow" class="py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-light mb-8 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                Join the Chill Community
+            </h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                Connect with fellow chill enthusiasts and share the zen vibes across the Solana ecosystem.
+            </p>
+            
+            <div class="flex justify-center space-x-6">
+                <a href="https://twitter.com/chillcoin_sol" class="bg-black/30 backdrop-blur-sm p-6 rounded-2xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all group">
+                    <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">🐦</div>
+                    <p class="text-cyan-400">Twitter</p>
+                </a>
+                <a href="https://t.me/chillcoin_community" class="bg-black/30 backdrop-blur-sm p-6 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all group">
+                    <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">✈️</div>
+                    <p class="text-purple-400">Telegram</p>
+                </a>
+                <a href="https://discord.gg/chillcoin" class="bg-black/30 backdrop-blur-sm p-6 rounded-2xl border border-pink-500/20 hover:border-pink-500/40 transition-all group">
+                    <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎮</div>
+                    <p class="text-pink-400">Discord</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-3xl font-light mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                chillcoin
+            </div>
+            <p class="text-gray-400 mb-8">it's really just a chill coin ✨</p>
+            
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://jup.ag/swap/SOL-DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" class="text-gray-400 hover:text-purple-400 transition-colors">Jupiter</a>
+                <a href="https://dexscreener.com/solana/DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" class="text-gray-400 hover:text-cyan-400 transition-colors">DexScreener</a>
+            </div>
+            
+            <p class="text-sm text-gray-500">
+                Built with zen vibes on Solana. Remember to DYOR and invest responsibly. 🧘‍♂️
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function copyContract() {
+            const contractAddress = document.getElementById('contract').textContent;
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.classList.add('bg-green-600');
+                button.classList.remove('bg-purple-600');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('bg-green-600');
+                    button.classList.add('bg-purple-600');
+                }, 2000);
+            });
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
