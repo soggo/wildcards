@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMAO - The Funniest Coin Ever</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        .laugh-bounce {
+            animation: laughBounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes laughBounce {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-2deg); }
+            50% { transform: translateY(-20px) rotate(0deg); }
+            75% { transform: translateY(-10px) rotate(2deg); }
+        }
+        
+        .giggle-shake {
+            animation: giggleShake 0.5s ease-in-out infinite;
+        }
+        
+        @keyframes giggleShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            75% { transform: translateX(2px); }
+        }
+        
+        .rainbow-text {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #dda0dd);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbowShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes rainbowShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .floating-emoji {
+            animation: floatEmoji 4s ease-in-out infinite;
+        }
+        
+        @keyframes floatEmoji {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(5deg); }
+            66% { transform: translateY(-5px) rotate(-3deg); }
+        }
+        
+        .bubble-pop {
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .bubble-pop:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-900 via-pink-800 to-cyan-900 min-h-screen overflow-x-hidden">
+    <!-- Floating Background Emojis -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="floating-emoji absolute top-10 left-10 text-4xl">😂</div>
+        <div class="floating-emoji absolute top-20 right-20 text-3xl" style="animation-delay: 0.5s">🤣</div>
+        <div class="floating-emoji absolute top-40 left-1/4 text-5xl" style="animation-delay: 1s">😆</div>
+        <div class="floating-emoji absolute bottom-20 right-10 text-4xl" style="animation-delay: 1.5s">😹</div>
+        <div class="floating-emoji absolute bottom-40 left-20 text-3xl" style="animation-delay: 2s">🤪</div>
+        <div class="floating-emoji absolute top-60 right-1/3 text-4xl" style="animation-delay: 2.5s">😵‍💫</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="relative z-10">
+        <!-- Header -->
+        <header class="p-6 flex justify-between items-center">
+            <div class="text-3xl font-bold rainbow-text laugh-bounce">LMAO</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-cyan-300 hover:text-pink-300 transition-colors font-semibold">About</a>
+                <a href="#tokenomics" class="text-cyan-300 hover:text-pink-300 transition-colors font-semibold">Tokenomics</a>
+                <a href="#roadmap" class="text-cyan-300 hover:text-pink-300 transition-colors font-semibold">Roadmap</a>
+                <a href="#community" class="text-cyan-300 hover:text-pink-300 transition-colors font-semibold">Community</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="text-center py-20 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-8xl md:text-9xl font-bold mb-8 laugh-bounce">
+                    <span class="rainbow-text">LMAO</span>
+                </h1>
+                <p class="text-2xl md:text-3xl text-cyan-300 mb-8 giggle-shake">
+                    The Funniest Coin Ever! 🚀
+                </p>
+                <p class="text-lg md:text-xl text-pink-300 mb-12 max-w-2xl mx-auto">
+                    When life gives you memes, make LMAO! The only token that literally makes you laugh out loud while your portfolio goes to the moon! 😂
+                </p>
+                
+                <!-- Contract Address -->
+                <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 mb-12 max-w-2xl mx-auto border border-cyan-400/30">
+                    <p class="text-cyan-300 mb-2 font-semibold">Contract Address:</p>
+                    <div class="flex items-center justify-center space-x-2 flex-wrap">
+                        <code id="contract" class="text-pink-300 text-sm md:text-base break-all">DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk</code>
+                        <button onclick="copyContract()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-all bubble-pop">
+                            📋 Copy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- DEX Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <p class="w-full text-cyan-300 mb-4">No DEX platforms selected</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-5xl font-bold text-center mb-16 rainbow-text">Why LMAO? 🤔</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-black/20 backdrop-blur-sm rounded-3xl p-8 border border-purple-400/30 bubble-pop">
+                        <div class="text-6xl mb-4 text-center">😂</div>
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-4 text-center">Pure Comedy</h3>
+                        <p class="text-pink-300 text-center">We're not just a token, we're a mood! Every transaction comes with a guaranteed chuckle.</p>
+                    </div>
+                    <div class="bg-black/20 backdrop-blur-sm rounded-3xl p-8 border border-cyan-400/30 bubble-pop">
+                        <div class="text-6xl mb-4 text-center">🚀</div>
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-4 text-center">Moon Mission</h3>
+                        <p class="text-pink-300 text-center">While others cry, we laugh all the way to the moon! LMAO is your ticket to financial comedy gold.</p>
+                    </div>
+                    <div class="bg-black/20 backdrop-blur-sm rounded-3xl p-8 border border-pink-400/30 bubble-pop">
+                        <div class="text-6xl mb-4 text-center">🎭</div>
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-4 text-center">Meme Magic</h3>
+                        <p class="text-pink-300 text-center">Powered by the collective laughter of the internet. The more we laugh, the higher we fly!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokenomics -->
+        <section id="tokenomics" class="py-20 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-5xl font-bold mb-16 rainbow-text">Tokenomics 📊</h2>
+                <div class="bg-black/30 backdrop-blur-sm rounded-3xl p-8 border border-purple-400/30">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-cyan-300 font-semibold">Total Supply:</span>
+                                <span class="text-pink-300">1,000,000,000 LMAO</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-cyan-300 font-semibold">Liquidity Pool:</span>
+                                <span class="text-pink-300">90% 💧</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-cyan-300 font-semibold">Marketing:</span>
+                                <span class="text-pink-300">5% 📢</span>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-cyan-300 font-semibold">Team:</span>
+                                <span class="text-pink-300">3% 👥</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-cyan-300 font-semibold">Community Rewards:</span>
+                                <span class="text-pink-300">2% 🎁</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-cyan-300 font-semibold">Tax:</span>
+                                <span class="text-pink-300">0% (No Taxes!) 🎉</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section id="roadmap" class="py-20 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-5xl font-bold text-center mb-16 rainbow-text">Roadmap to Hilarity 🗺️</h2>
+                <div class="space-y-8">
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border-l-4 border-purple-400 bubble-pop">
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-2">Phase 1: The Giggle Genesis 😄</h3>
+                        <p class="text-pink-300">Launch LMAO, build the funniest community on Solana, and get everyone laughing!</p>
+                    </div>
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border-l-4 border-cyan-400 bubble-pop">
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-2">Phase 2: Meme Machine Activation 🤖</h3>
+                        <p class="text-pink-300">Deploy our AI-powered meme generator and launch the LMAO NFT collection!</p>
+                    </div>
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border-l-4 border-pink-400 bubble-pop">
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-2">Phase 3: Comedy Conquest 🏆</h3>
+                        <p class="text-pink-300">Major exchange listings, partnerships with comedy platforms, and world domination through laughter!</p>
+                    </div>
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border-l-4 border-yellow-400 bubble-pop">
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-2">Phase 4: Galactic Giggles 🌌</h3>
+                        <p class="text-pink-300">Launch LMAO to Mars, establish the first comedy club on the moon, and make aliens laugh!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community -->
+        <section id="community" class="py-20 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-5xl font-bold mb-16 rainbow-text">Join the Laugh Riot! 🎪</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="#" class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-6 text-white hover:scale-105 transition-transform bubble-pop">
+                        <div class="text-4xl mb-4">🐦</div>
+                        <div class="font-bold">Twitter</div>
+                        <div class="text-sm opacity-80">@LMAOCoinSol</div>
+                    </a>
+                    <a href="#" class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-6 text-white hover:scale-105 transition-transform bubble-pop">
+                        <div class="text-4xl mb-4">✈️</div>
+                        <div class="font-bold">Telegram</div>
+                        <div class="text-sm opacity-80">@LMAOCommunity</div>
+                    </a>
+                    <a href="#" class="bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl p-6 text-white hover:scale-105 transition-transform bubble-pop">
+                        <div class="text-4xl mb-4">🎮</div>
+                        <div class="font-bold">Discord</div>
+                        <div class="text-sm opacity-80">LMAO Server</div>
+                    </a>
+                    <a href="#" class="bg-gradient-to-br from-pink-500 to-pink-700 rounded-2xl p-6 text-white hover:scale-105 transition-transform bubble-pop">
+                        <div class="text-4xl mb-4">🌐</div>
+                        <div class="font-bold">Website</div>
+                        <div class="text-sm opacity-80">lmao.fun</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-6xl mb-6 laugh-bounce">😂</div>
+                <p class="text-2xl font-bold rainbow-text mb-4">LMAO - Laughing My Assets Off!</p>
+                <p class="text-cyan-300 mb-6">The funniest investment you'll ever make!</p>
+                <p class="text-pink-300 text-sm opacity-80">
+                    Disclaimer: LMAO is a meme token created for entertainment purposes. 
+                    Please invest responsibly and only what you can afford to lose while laughing! 😄
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function copyContract() {
+            const contractAddress = document.getElementById('contract').textContent;
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = '✅ Copied!';
+                button.classList.add('giggle-shake');
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('giggle-shake');
+                }, 2000);
+            });
+        }
+
+        // Add random emoji explosions
+        function createEmojiExplosion() {
+            const emojis = ['😂', '🤣', '😆', '😹', '🤪', '😵‍💫', '🎉', '🚀', '💎'];
+            const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            const element = document.createElement('div');
+            element.textContent = emoji;
+            element.className = 'fixed text-4xl pointer-events-none z-20';
+            element.style.left = Math.random() * window.innerWidth + 'px';
+            element.style.top = Math.random() * window.innerHeight + 'px';
+            element.style.animation = 'floatEmoji 3s ease-out forwards';
+            
+            document.body.appendChild(element);
+            
+            setTimeout(() => {
+                element.remove();
+            }, 3000);
+        }
+
+        // Create emoji explosions every 5 seconds
+        setInterval(createEmojiExplosion, 5000);
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add giggle effect to buttons on hover
+        document.querySelectorAll('button, .bubble-pop').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                element.classList.add('giggle-shake');
+                setTimeout(() => {
+                    element.classList.remove('giggle-shake');
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
