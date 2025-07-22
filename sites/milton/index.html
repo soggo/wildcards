@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milton - The Pixel Rat Revolution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap');
+        
+        .pixel-font { font-family: 'Press Start 2P', monospace; }
+        .cyber-font { font-family: 'Orbitron', monospace; }
+        
+        .pixel-border {
+            border-image: url("data:image/svg+xml,%3csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m0 0h100v100h-100z' fill='none' stroke='%23a855f7' stroke-width='4'/%3e%3c/svg%3e") 4;
+        }
+        
+        .glitch {
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            color: #06b6d4;
+            z-index: -1;
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            color: #ec4899;
+            z-index: -2;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(2px, -2px); }
+            40% { transform: translate(-2px, 2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, -2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(-2px, 2px); }
+        }
+        
+        .pixel-art {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+        
+        .scan-lines {
+            background: linear-gradient(transparent 50%, rgba(0, 255, 0, 0.03) 50%);
+            background-size: 100% 4px;
+            animation: scan 0.1s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 4px; }
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px #a855f7, 0 0 40px #a855f7, 0 0 60px #a855f7;
+        }
+        
+        .terminal-cursor::after {
+            content: '█';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-black text-green-400 overflow-x-hidden scan-lines">
+    <!-- Floating Navigation Terminal -->
+    <nav class="fixed top-4 right-4 z-50 bg-gray-900 border-2 border-purple-600 p-4 rounded-lg neon-glow">
+        <div class="pixel-font text-xs text-cyan-400 mb-2">NAVIGATION.EXE</div>
+        <div class="space-y-2">
+            <a href="#home" class="block text-green-400 hover:text-pink-400 transition-colors text-xs">HOME</a>
+            <a href="#stats" class="block text-green-400 hover:text-pink-400 transition-colors text-xs">STATS</a>
+            <a href="#trade" class="block text-green-400 hover:text-pink-400 transition-colors text-xs">TRADE</a>
+            <a href="#community" class="block text-green-400 hover:text-pink-400 transition-colors text-xs">COMM</a>
+        </div>
+    </nav>
+
+    <!-- Hero Terminal Interface -->
+    <section id="home" class="min-h-screen flex items-center justify-center p-4">
+        <div class="max-w-6xl w-full">
+            <div class="bg-gray-900 border-4 border-purple-600 rounded-lg p-8 neon-glow">
+                <div class="pixel-font text-cyan-400 text-sm mb-4">
+                    C:\MEMECOINS\MILTON> INITIALIZE_RAT.EXE
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h1 class="glitch cyber-font text-6xl lg:text-8xl font-black text-purple-400 mb-6" data-text="MILTON">
+                            MILTON
+                        </h1>
+                        
+                        <div class="pixel-font text-green-400 text-lg mb-6">
+                            <div class="terminal-cursor">LOADING PIXEL RAT PROTOCOL</div>
+                        </div>
+                        
+                        <div class="bg-black border-2 border-cyan-400 p-4 rounded mb-6">
+                            <div class="pixel-font text-xs text-cyan-400 mb-2">SYSTEM STATUS:</div>
+                            <div class="text-green-400 text-sm">
+                                ▓▓▓▓▓▓▓▓▓▓ 100% LOADED<br>
+                                BLOCKCHAIN: SOLANA<br>
+                                STATUS: ACTIVE<br>
+                                MEME LEVEL: MAXIMUM
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <button onclick="copyContract()" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg pixel-font text-sm transition-all transform hover:scale-105 neon-glow">
+                                COPY CONTRACT
+                            </button>
+                            <a href="#trade" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg pixel-font text-sm transition-all transform hover:scale-105 neon-glow">
+                                TRADE NOW
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="bg-gray-800 border-4 border-green-400 rounded-lg p-8 text-center">
+                            <div class="text-8xl mb-4">🐀</div>
+                            <div class="pixel-font text-green-400 text-sm">
+                                MILTON.RAT<br>
+                                VERSION 2.0<br>
+                                EARLY 2000s EDITION
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Terminal -->
+    <section id="stats" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-gray-900 border-4 border-cyan-400 rounded-lg p-8 neon-glow">
+                <div class="pixel-font text-cyan-400 text-sm mb-6">
+                    C:\STATS> DISPLAY_TOKENOMICS.BAT
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-black border-2 border-purple-600 p-6 rounded">
+                        <div class="pixel-font text-purple-400 text-xs mb-2">TOTAL SUPPLY</div>
+                        <div class="cyber-font text-3xl text-green-400 font-bold">1,000,000,000</div>
+                        <div class="text-gray-400 text-sm">MILTON TOKENS</div>
+                    </div>
+                    
+                    <div class="bg-black border-2 border-pink-600 p-6 rounded">
+                        <div class="pixel-font text-pink-400 text-xs mb-2">LIQUIDITY POOL</div>
+                        <div class="cyber-font text-3xl text-green-400 font-bold">LOCKED</div>
+                        <div class="text-gray-400 text-sm">100% SECURE</div>
+                    </div>
+                    
+                    <div class="bg-black border-2 border-cyan-600 p-6 rounded">
+                        <div class="pixel-font text-cyan-400 text-xs mb-2">TAX RATE</div>
+                        <div class="cyber-font text-3xl text-green-400 font-bold">0%</div>
+                        <div class="text-gray-400 text-sm">NO FEES</div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-black border-2 border-green-400 p-6 rounded">
+                    <div class="pixel-font text-green-400 text-sm mb-4">CONTRACT ADDRESS:</div>
+                    <div class="bg-gray-800 p-4 rounded border border-gray-600 flex items-center justify-between">
+                        <code class="text-cyan-400 text-sm break-all" id="contractAddress">3biBnQ9sAUsCxVCExmSM2os1P2XhLnTZkyPHFAGwbonk</code>
+                        <button onclick="copyContract()" class="ml-4 bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-xs">
+                            COPY
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trading Terminal -->
+    <section id="trade" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-900 border-4 border-pink-400 rounded-lg p-8 neon-glow">
+                <div class="pixel-font text-pink-400 text-sm mb-6">
+                    C:\TRADE> LAUNCH_DEX_INTERFACES.EXE
+                </div>
+                
+                <div class="text-center mb-8">
+                    <h2 class="cyber-font text-4xl text-purple-400 font-bold mb-4">ACQUIRE MILTON</h2>
+                    <p class="text-gray-400">Choose your trading platform and join the pixel rat revolution</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <a href="https://jup.ag/swap/SOL-3biBnQ9sAUsCxVCExmSM2os1P2XhLnTZkyPHFAGwbonk" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 p-6 rounded-lg border-2 border-purple-400 hover:border-pink-400 transition-all transform hover:scale-105 neon-glow">
+                        <div class="pixel-font text-white text-lg mb-2">JUPITER</div>
+                        <div class="text-gray-200 text-sm">Advanced trading interface</div>
+                        <div class="mt-4 text-right">
+                            <span class="text-2xl">🚀</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://dexscreener.com/solana/3biBnQ9sAUsCxVCExmSM2os1P2XhLnTZkyPHFAGwbonk" target="_blank" class="bg-gradient-to-r from-cyan-600 to-blue-600 p-6 rounded-lg border-2 border-cyan-400 hover:border-blue-400 transition-all transform hover:scale-105 neon-glow">
+                        <div class="pixel-font text-white text-lg mb-2">DEXSCREENER</div>
+                        <div class="text-gray-200 text-sm">Charts & analytics</div>
+                        <div class="mt-4 text-right">
+                            <span class="text-2xl">📊</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="mt-8 bg-black border-2 border-yellow-400 p-6 rounded">
+                    <div class="pixel-font text-yellow-400 text-sm mb-2">WARNING:</div>
+                    <div class="text-gray-400 text-sm">
+                        This is a memecoin. Trade responsibly. Do your own research. 
+                        Milton is not responsible for your financial decisions, but he appreciates your support! 🐀
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Terminal -->
+    <section id="community" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-gray-900 border-4 border-green-400 rounded-lg p-8 neon-glow">
+                <div class="pixel-font text-green-400 text-sm mb-6">
+                    C:\COMMUNITY> CONNECT_NETWORKS.SH
+                </div>
+                
+                <div class="text-center mb-12">
+                    <h2 class="cyber-font text-4xl text-green-400 font-bold mb-4">JOIN THE RAT PACK</h2>
+                    <p class="text-gray-400">Connect with fellow Milton enthusiasts across the digital realm</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="https://twitter.com/MiltonRatSOL" target="_blank" class="bg-black border-2 border-blue-400 p-6 rounded-lg text-center hover:border-blue-300 transition-all transform hover:scale-105">
+                        <div class="text-4xl mb-4">🐦</div>
+                        <div class="pixel-font text-blue-400 text-sm mb-2">TWITTER</div>
+                        <div class="text-gray-400 text-xs">Latest updates & memes</div>
+                    </a>
+                    
+                    <a href="https://t.me/MiltonRatSOL" target="_blank" class="bg-black border-2 border-cyan-400 p-6 rounded-lg text-center hover:border-cyan-300 transition-all transform hover:scale-105">
+                        <div class="text-4xl mb-4">✈️</div>
+                        <div class="pixel-font text-cyan-400 text-sm mb-2">TELEGRAM</div>
+                        <div class="text-gray-400 text-xs">Real-time chat</div>
+                    </a>
+                    
+                    <a href="https://discord.gg/MiltonRat" target="_blank" class="bg-black border-2 border-purple-400 p-6 rounded-lg text-center hover:border-purple-300 transition-all transform hover:scale-105">
+                        <div class="text-4xl mb-4">🎮</div>
+                        <div class="pixel-font text-purple-400 text-sm mb-2">DISCORD</div>
+                        <div class="text-gray-400 text-xs">Gaming community</div>
+                    </a>
+                    
+                    <a href="https://miltonrat.fun" target="_blank" class="bg-black border-2 border-pink-400 p-6 rounded-lg text-center hover:border-pink-300 transition-all transform hover:scale-105">
+                        <div class="text-4xl mb-4">🌐</div>
+                        <div class="pixel-font text-pink-400 text-sm mb-2">WEBSITE</div>
+                        <div class="text-gray-400 text-xs">Official portal</div>
+                    </a>
+                </div>
+                
+                <div class="mt-12 bg-black border-2 border-yellow-400 p-6 rounded">
+                    <div class="pixel-font text-yellow-400 text-sm mb-4">MILTON'S MESSAGE:</div>
+                    <div class="text-gray-300 text-lg italic">
+                        "From the pixels of the early 2000s to the blockchain of today, 
+                        I've evolved but never forgotten my roots. Join me in this digital adventure! 🐀✨"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Terminal -->
+    <footer class="py-12 px-4 border-t-4 border-purple-600">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-gray-900 border-2 border-gray-600 p-6 rounded-lg">
+                <div class="pixel-font text-gray-400 text-xs mb-4">
+                    SYSTEM SHUTDOWN INITIATED...
+                </div>
+                <div class="text-gray-500 text-sm">
+                    © 2024 Milton Token. Built on Solana. Powered by memes and nostalgia.
+                </div>
+                <div class="pixel-font text-green-400 text-xs mt-4">
+                    REMEMBER: ALWAYS DO YOUR OWN RESEARCH
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Copy contract address functionality
+        function copyContract() {
+            const contractAddress = '3biBnQ9sAUsCxVCExmSM2os1P2XhLnTZkyPHFAGwbonk';
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                // Create notification
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg pixel-font text-sm z-50 neon-glow';
+                notification.textContent = 'CONTRACT COPIED TO CLIPBOARD!';
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            });
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Terminal typing effect
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effects on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const terminalCursor = entry.target.querySelector('.terminal-cursor');
+                    if (terminalCursor && !terminalCursor.classList.contains('typed')) {
+                        terminalCursor.classList.add('typed');
+                        typeWriter(terminalCursor, 'LOADING PIXEL RAT PROTOCOL', 100);
+                    }
+                }
+            });
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add random glitch effects
+        setInterval(() => {
+            const glitchElements = document.querySelectorAll('.glitch');
+            glitchElements.forEach(el => {
+                if (Math.random() < 0.1) {
+                    el.style.animation = 'none';
+                    setTimeout(() => {
+                        el.style.animation = 'glitch 2s infinite';
+                    }, 100);
+                }
+            });
+        }, 2000);
+    </script>
+</body>
+</html>
