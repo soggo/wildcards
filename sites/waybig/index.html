@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAYBIG - The Ginormous Alien on Solana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+        
+        .cosmic-bg {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #4c1d95 75%, #6366f1 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .nebula {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, rgba(79, 70, 229, 0.2) 50%, transparent 100%);
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: pulse-slow 8s ease-in-out infinite;
+        }
+        
+        .alien-glow {
+            box-shadow: 0 0 50px rgba(147, 51, 234, 0.5), 0 0 100px rgba(79, 70, 229, 0.3);
+        }
+        
+        .hologram {
+            background: linear-gradient(45deg, transparent 30%, rgba(147, 51, 234, 0.1) 50%, transparent 70%);
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .cosmic-text {
+            font-family: 'Orbitron', monospace;
+            text-shadow: 0 0 20px rgba(147, 51, 234, 0.8);
+        }
+        
+        .planet {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #8b5cf6, #4c1d95);
+            position: absolute;
+            animation: spin-slow 30s linear infinite;
+        }
+        
+        .copy-success {
+            background: linear-gradient(45deg, #10b981, #059669);
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="cosmic-bg min-h-screen text-white">
+    <!-- Cosmic Background Elements -->
+    <div class="stars"></div>
+    <div class="nebula top-20 left-10"></div>
+    <div class="nebula bottom-40 right-20 animation-delay-4s"></div>
+    <div class="planet top-32 right-10"></div>
+    <div class="planet bottom-20 left-20" style="width: 60px; height: 60px; background: radial-gradient(circle at 40% 40%, #f59e0b, #d97706);"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-purple-500/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="https://raw.githubusercontent.com/soggo/wildcards/main/sites/waybig/images/b6f66114-21f3-4e76-a9f5-93add25f2ae7_FB_IMG_1683677702272.jpg" alt="WAYBIG Logo" class="w-10 h-10 rounded-full alien-glow">
+                    <span class="cosmic-text font-bold text-xl">WAYBIG</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="hover:text-purple-300 transition-colors">About</a>
+                    <a href="#tokenomics" class="hover:text-purple-300 transition-colors">Tokenomics</a>
+                    <a href="#roadmap" class="hover:text-purple-300 transition-colors">Roadmap</a>
+                    <a href="#community" class="hover:text-purple-300 transition-colors">Community</a>
+                </div>
+                <button id="mobile-menu" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative pt-16">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="animate-float mb-8">
+                <img src="https://raw.githubusercontent.com/soggo/wildcards/main/sites/waybig/images/b6f66114-21f3-4e76-a9f5-93add25f2ae7_FB_IMG_1683677702272.jpg" alt="WAYBIG Logo" class="w-48 h-48 mx-auto rounded-full alien-glow mb-6">
+            </div>
+            
+            <h1 class="cosmic-text text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent animate-pulse-slow">
+                WAYBIG
+            </h1>
+            
+            <p class="text-2xl md:text-3xl mb-4 text-purple-200">
+                The Ginormous Alien
+            </p>
+            
+            <p class="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+                From the depths of space to the Solana blockchain - WAYBIG has arrived to dominate the memecoin universe with cosmic proportions!
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 alien-glow">
+                    🚀 Buy on Raydium
+                </a>
+                <a href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105">
+                    ⚡ Buy on Jupiter
+                </a>
+            </div>
+            
+            <!-- Contract Address -->
+            <div class="hologram p-6 rounded-2xl border border-purple-500/30 max-w-md mx-auto">
+                <p class="text-sm text-purple-200 mb-2">Contract Address:</p>
+                <div class="flex items-center justify-between bg-black/30 rounded-lg p-3">
+                    <span id="contract" class="text-xs font-mono text-white break-all">DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk</span>
+                    <button id="copy-btn" class="ml-2 bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded text-xs transition-all duration-300">
+                        Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="min-h-screen py-20 relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="hologram p-8 rounded-3xl">
+                    <h2 class="cosmic-text text-4xl font-bold mb-6 text-purple-300">
+                        Alien Intelligence Meets Blockchain
+                    </h2>
+                    <p class="text-lg mb-6 text-gray-300 leading-relaxed">
+                        WAYBIG isn't just another memecoin - it's an intergalactic phenomenon. This ginormous alien has traveled across the cosmos to establish dominance on the Solana blockchain.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-300 leading-relaxed">
+                        With advanced alien technology and cosmic wisdom, WAYBIG represents the evolution of memecoins into something truly out of this world.
+                    </p>
+                    <div class="flex space-x-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-400">∞</div>
+                            <div class="text-sm text-gray-400">Cosmic Power</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-400">🛸</div>
+                            <div class="text-sm text-gray-400">Alien Tech</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-indigo-400">⚡</div>
+                            <div class="text-sm text-gray-400">Solana Speed</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="animate-bounce-slow">
+                        <div class="w-80 h-80 mx-auto bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-600 rounded-full alien-glow flex items-center justify-center">
+                            <span class="text-6xl">👽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="min-h-screen py-20 relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="cosmic-text text-5xl font-bold text-center mb-16 text-purple-300">
+                Cosmic Tokenomics
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="hologram p-8 rounded-3xl text-center transform hover:scale-105 transition-all duration-300">
+                    <div class="text-4xl mb-4">🌌</div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-300">Total Supply</h3>
+                    <p class="text-3xl font-bold text-white mb-2">1B WAY</p>
+                    <p class="text-gray-400">Fixed supply across the galaxy</p>
+                </div>
+                <div class="hologram p-8 rounded-3xl text-center transform hover:scale-105 transition-all duration-300">
+                    <div class="text-4xl mb-4">🔥</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Burned</h3>
+                    <p class="text-3xl font-bold text-white mb-2">50%</p>
+                    <p class="text-gray-400">Sent to the cosmic void</p>
+                </div>
+                <div class="hologram p-8 rounded-3xl text-center transform hover:scale-105 transition-all duration-300">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-300">Liquidity</h3>
+                    <p class="text-3xl font-bold text-white mb-2">40%</p>
+                    <p class="text-gray-400">Locked in space-time</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <div class="hologram p-8 rounded-3xl max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-300">Alien Distribution</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Community Rewards</span>
+                            <span class="text-white font-bold">5%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Marketing & Partnerships</span>
+                            <span class="text-white font-bold">3%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Development Fund</span>
+                            <span class="text-white font-bold">2%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="min-h-screen py-20 relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="cosmic-text text-5xl font-bold text-center mb-16 text-purple-300">
+                Intergalactic Roadmap
+            </h2>
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-600 to-blue-600"></div>
+                
+                <div class="space-y-12">
+                    <div class="flex items-center justify-start">
+                        <div class="hologram p-6 rounded-2xl w-full md:w-1/2 ml-0 md:ml-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-4 h-4 bg-purple-500 rounded-full mr-4"></div>
+                                <h3 class="text-xl font-bold text-purple-300">Phase 1: Landing</h3>
+                            </div>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>✅ Token Launch on Solana</li>
+                                <li>✅ Community Building</li>
+                                <li>✅ Initial DEX Listings</li>
+                                <li>✅ Alien Meme Creation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-end">
+                        <div class="hologram p-6 rounded-2xl w-full md:w-1/2 mr-0 md:mr-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-4 h-4 bg-blue-500 rounded-full mr-4"></div>
+                                <h3 class="text-xl font-bold text-blue-300">Phase 2: Expansion</h3>
+                            </div>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>🔄 Major Exchange Listings</li>
+                                <li>🔄 NFT Collection Launch</li>
+                                <li>🔄 Partnerships with Space Projects</li>
+                                <li>🔄 Alien Gaming Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-start">
+                        <div class="hologram p-6 rounded-2xl w-full md:w-1/2 ml-0 md:ml-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-4 h-4 bg-indigo-500 rounded-full mr-4"></div>
+                                <h3 class="text-xl font-bold text-indigo-300">Phase 3: Domination</h3>
+                            </div>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>🚀 Metaverse Integration</li>
+                                <li>🚀 Alien DAO Governance</li>
+                                <li>🚀 Cross-Chain Expansion</li>
+                                <li>🚀 Galactic Conquest Complete</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="min-h-screen py-20 relative">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="cosmic-text text-5xl font-bold mb-16 text-purple-300">
+                Join the Alien Army
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <a href="https://twitter.com/waybig_sol" target="_blank" rel="noopener noreferrer" class="hologram p-8 rounded-3xl hover:scale-105 transition-all duration-300 group">
+                    <div class="text-4xl mb-4 group-hover:animate-bounce">🐦</div>
+                    <h3 class="text-xl font-bold text-blue-300">Twitter</h3>
+                    <p class="text-gray-400">Follow our cosmic updates</p>
+                </a>
+                
+                <a href="https://t.me/waybig_portal" target="_blank" rel="noopener noreferrer" class="hologram p-8 rounded-3xl hover:scale-105 transition-all duration-300 group">
+                    <div class="text-4xl mb-4 group-hover:animate-bounce">📱</div>
+                    <h3 class="text-xl font-bold text-purple-300">Telegram</h3>
+                    <p class="text-gray-400">Join the alien chat</p>
+                </a>
+                
+                <a href="https://discord.gg/waybig" target="_blank" rel="noopener noreferrer" class="hologram p-8 rounded-3xl hover:scale-105 transition-all duration-300 group">
+                    <div class="text-4xl mb-4 group-hover:animate-bounce">🎮</div>
+                    <h3 class="text-xl font-bold text-indigo-300">Discord</h3>
+                    <p class="text-gray-400">Gaming & community hub</p>
+                </a>
+                
+                <a href="https://dexscreener.com/solana/DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" target="_blank" rel="noopener noreferrer" class="hologram p-8 rounded-3xl hover:scale-105 transition-all duration-300 group">
+                    <div class="text-4xl mb-4 group-hover:animate-bounce">📊</div>
+                    <h3 class="text-xl font-bold text-green-300">DexScreener</h3>
+                    <p class="text-gray-400">Track our cosmic journey</p>
+                </a>
+            </div>
+            
+            <div class="hologram p-8 rounded-3xl max-w-2xl mx-auto mb-16">
+                <h3 class="text-2xl font-bold mb-4 text-purple-300">Ready to Go WAYBIG?</h3>
+                <p class="text-lg text-gray-300 mb-6">
+                    Join thousands of alien believers as we conquer the memecoin galaxy. The future is ginormous!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105">
+                        🚀 Launch to the Moon
+                    </a>
+                    <a href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105">
+                        ⚡ Jupiter Jump
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-purple-500/30">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center mb-6">
+                <img src="https://raw.githubusercontent.com/soggo/wildcards/main/sites/waybig/images/b6f66114-21f3-4e76-a9f5-93add25f2ae7_FB_IMG_1683677702272.jpg" alt="WAYBIG Logo" class="w-12 h-12 rounded-full alien-glow mr-3">
+                <span class="cosmic-text text-2xl font-bold">WAYBIG</span>
+            </div>
+            <p class="text-gray-400 mb-4">
+                The ginormous alien conquering the Solana blockchain
+            </p>
+            <p class="text-sm text-gray-500">
+                © 2024 WAYBIG. All rights reserved across the galaxy.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Copy contract address functionality
+        document.getElementById('copy-btn').addEventListener('click', function() {
+            const contractAddress = document.getElementById('contract').textContent;
+            navigator.clipboard.writeText(contractAddress).then(function() {
+                const btn = document.getElementById('copy-btn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copy-success');
+                setTimeout(function() {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copy-success');
+                }, 2000);
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            // Simple mobile menu implementation
+            alert('Mobile menu - implement as needed');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive cosmic effects
+        document.addEventListener('mousemove', function(e) {
+            const stars = document.querySelector('.stars');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            stars.style.transform = `translate(${x * 10}px, ${y * 10}px)`;
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all hologram elements
+        document.querySelectorAll('.hologram').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
