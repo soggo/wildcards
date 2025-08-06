@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYLE XY - The Blockchain Phenomenon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+        
+        .font-orbitron { font-family: 'Orbitron', monospace; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .neural-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .neural-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(244, 114, 182, 0.1) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        .glitch-text {
+            position: relative;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text::before {
+            animation: glitch-1 2s infinite;
+            color: #ff00ff;
+            z-index: -1;
+        }
+        
+        .glitch-text::after {
+            animation: glitch-2 2s infinite;
+            color: #ffff00;
+            z-index: -2;
+        }
+        
+        @keyframes glitch-1 {
+            0%, 14%, 15%, 49%, 50%, 99%, 100% { transform: translate(0); }
+            15%, 49% { transform: translate(-2px, -1px); }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 20%, 21%, 62%, 63%, 99%, 100% { transform: translate(0); }
+            21%, 62% { transform: translate(2px, 1px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .matrix-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .matrix-char {
+            position: absolute;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            animation: fall linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes fall {
+            0% { transform: translateY(-100vh); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        
+        .hologram {
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 255, 0.1) 50%, transparent 70%);
+            background-size: 20px 20px;
+            animation: hologram-scan 3s linear infinite;
+        }
+        
+        @keyframes hologram-scan {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+        
+        .neon-border {
+            border: 2px solid #00ffff;
+            box-shadow: 
+                0 0 10px #00ffff,
+                inset 0 0 10px rgba(0, 255, 255, 0.1);
+        }
+        
+        .data-stream {
+            background: linear-gradient(90deg, transparent, #00ff00, transparent);
+            height: 1px;
+            animation: stream 2s linear infinite;
+        }
+        
+        @keyframes stream {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body class="neural-bg text-white font-inter overflow-x-hidden">
+    <!-- Matrix Rain Effect -->
+    <div class="matrix-rain" id="matrixRain"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-cyan-400/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-full"></div>
+                    <span class="font-orbitron font-bold text-xl">KYLE XY</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-cyan-400 transition-colors">Neural Profile</a>
+                    <a href="#powers" class="hover:text-cyan-400 transition-colors">Abilities</a>
+                    <a href="#tokenomics" class="hover:text-cyan-400 transition-colors">Data</a>
+                    <a href="#roadmap" class="hover:text-cyan-400 transition-colors">Timeline</a>
+                </div>
+                <button class="md:hidden text-cyan-400">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="floating mb-8">
+                <div class="w-32 h-32 mx-auto bg-gradient-to-r from-purple-600 via-cyan-400 to-pink-400 rounded-full p-1 hologram">
+                    <div class="w-full h-full bg-gray-900 rounded-full flex items-center justify-center">
+                        <span class="font-orbitron font-bold text-3xl">KXY</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="font-orbitron font-black text-6xl md:text-8xl mb-6 glitch-text" data-text="KYLE XY">
+                KYLE XY
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-8 text-cyan-400 font-light">
+                The OG Sci-Fi Superman Boy • Now on Blockchain
+            </p>
+            
+            <div class="mb-12">
+                <div class="inline-block bg-black/40 backdrop-blur-sm rounded-lg p-4 neon-border">
+                    <p class="text-sm text-gray-300 mb-2">Neural Network Address:</p>
+                    <div class="flex items-center space-x-2">
+                        <code class="text-cyan-400 font-mono text-sm break-all" id="contractAddress">
+                            3biBnQ9sAUsCxVCExmSM2os1P2XhLnTZkyPHFAGwbonk
+                        </code>
+                        <button onclick="copyContract()" class="text-purple-400 hover:text-purple-300 transition-colors">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <a href="https://raydium.io" target="_blank" class="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 neon-border">
+                    <i class="fas fa-rocket mr-2"></i>Raydium
+                </a>
+                <a href="https://jup.ag" target="_blank" class="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 neon-border">
+                    <i class="fas fa-exchange-alt mr-2"></i>Jupiter
+                </a>
+                <a href="https://dexscreener.com" target="_blank" class="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 neon-border">
+                    <i class="fas fa-chart-line mr-2"></i>DexScreener
+                </a>
+            </div>
+            
+            <div class="flex justify-center space-x-6">
+                <a href="https://twitter.com/kylexy_sol" target="_blank" class="text-2xl text-cyan-400 hover:text-cyan-300 transition-colors">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://t.me/kylexy_portal" target="_blank" class="text-2xl text-cyan-400 hover:text-cyan-300 transition-colors">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://discord.gg/kylexy" target="_blank" class="text-2xl text-cyan-400 hover:text-cyan-300 transition-colors">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating Data Streams -->
+        <div class="absolute top-1/4 left-10 w-px h-32 bg-gradient-to-b from-transparent via-cyan-400 to-transparent opacity-50"></div>
+        <div class="absolute top-1/3 right-10 w-px h-24 bg-gradient-to-b from-transparent via-purple-400 to-transparent opacity-50"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-24 h-px bg-gradient-to-r from-transparent via-pink-400 to-transparent opacity-50"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-orbitron font-bold text-4xl mb-6 text-cyan-400">Neural Profile</h2>
+                    <div class="space-y-4 text-lg">
+                        <p>Kyle XY wasn't just a TV show - it was a glimpse into the future of human evolution. Now, that future is here on the blockchain.</p>
+                        <p>Born without a belly button, gifted with superhuman abilities, and possessing an intellect that defies comprehension - Kyle represents the next step in digital evolution.</p>
+                        <p>Join the neural network. Embrace the extraordinary.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-black/40 backdrop-blur-sm rounded-lg p-8 neon-border hologram">
+                        <h3 class="font-orbitron font-bold text-xl mb-4 text-purple-400">System Specs</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span>Intelligence:</span>
+                                <span class="text-cyan-400">∞</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Processing Power:</span>
+                                <span class="text-cyan-400">Quantum</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Network:</span>
+                                <span class="text-cyan-400">Solana</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Status:</span>
+                                <span class="text-green-400">Online</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Powers Section -->
+    <section id="powers" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-orbitron font-bold text-4xl text-center mb-12 text-pink-400">Extraordinary Abilities</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-black/40 backdrop-blur-sm rounded-lg p-6 neon-border hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-4 text-purple-400">🧠</div>
+                    <h3 class="font-orbitron font-bold text-xl mb-3">Superhuman Intelligence</h3>
+                    <p>Process complex algorithms and market patterns at light speed</p>
+                </div>
+                <div class="bg-black/40 backdrop-blur-sm rounded-lg p-6 neon-border hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-4 text-cyan-400">⚡</div>
+                    <h3 class="font-orbitron font-bold text-xl mb-3">Lightning Reflexes</h3>
+                    <p>Execute trades and transactions faster than any human trader</p>
+                </div>
+                <div class="bg-black/40 backdrop-blur-sm rounded-lg p-6 neon-border hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-4 text-pink-400">🔮</div>
+                    <h3 class="font-orbitron font-bold text-xl mb-3">Predictive Analysis</h3>
+                    <p>Anticipate market movements with uncanny accuracy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-orbitron font-bold text-4xl text-center mb-12 text-cyan-400">Neural Economics</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-black/40 backdrop-blur-sm rounded-lg p-8 neon-border">
+                    <h3 class="font-orbitron font-bold text-2xl mb-6 text-purple-400">Token Distribution</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span>Community Pool</span>
+                            <span class="text-cyan-400 font-bold">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-purple-600 to-cyan-400 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span>Development</span>
+                            <span class="text-cyan-400 font-bold">15%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-cyan-400 to-pink-400 h-2 rounded-full" style="width: 15%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span>Marketing</span>
+                            <span class="text-cyan-400 font-bold">5%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-pink-400 to-purple-600 h-2 rounded-full" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-black/40 backdrop-blur-sm rounded-lg p-8 neon-border">
+                    <h3 class="font-orbitron font-bold text-2xl mb-6 text-pink-400">Network Stats</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between">
+                            <span>Total Supply:</span>
+                            <span class="text-cyan-400 font-mono">1,000,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Blockchain:</span>
+                            <span class="text-cyan-400">Solana</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Tax:</span>
+                            <span class="text-green-400">0%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Liquidity:</span>
+                            <span class="text-cyan-400">Locked</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-orbitron font-bold text-4xl text-center mb-12 text-purple-400">Evolution Timeline</h2>
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-600 via-cyan-400 to-pink-400"></div>
+                
+                <div class="space-y-12">
+                    <div class="flex items-center relative">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-black/40 backdrop-blur-sm rounded-lg p-6 neon-border">
+                                <h3 class="font-orbitron font-bold text-xl mb-2 text-cyan-400">Phase 1: Awakening</h3>
+                                <p>Token launch, community building, initial DEX listings</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-black"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                    
+                    <div class="flex items-center relative">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-400 rounded-full border-4 border-black"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-black/40 backdrop-blur-sm rounded-lg p-6 neon-border">
+                                <h3 class="font-orbitron font-bold text-xl mb-2 text-purple-400">Phase 2: Enhancement</h3>
+                                <p>NFT collection, staking rewards, partnership announcements</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center relative">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-black/40 backdrop-blur-sm rounded-lg p-6 neon-border">
+                                <h3 class="font-orbitron font-bold text-xl mb-2 text-pink-400">Phase 3: Transcendence</h3>
+                                <p>DeFi integration, cross-chain expansion, metaverse presence</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-pink-400 rounded-full border-4 border-black"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-cyan-400/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-8">
+                <div class="flex justify-center space-x-8 mb-6">
+                    <a href="https://twitter.com/kylexy_sol" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://t.me/kylexy_portal" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <i class="fab fa-telegram text-2xl"></i>
+                    </a>
+                    <a href="https://discord.gg/kylexy" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-sm text-gray-400">
+                <p class="mb-2">© 2024 KYLE XY Token. All rights reserved.</p>
+                <p>This is a meme token with no intrinsic value or expectation of financial return.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Copy contract address function
+        function copyContract() {
+            const contractAddress = document.getElementById('contractAddress').textContent.trim();
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                // Show feedback
+                const button = event.target;
+                const originalIcon = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i>';
+                button.classList.add('text-green-400');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalIcon;
+                    button.classList.remove('text-green-400');
+                    button.classList.add('text-purple-400');
+                }, 2000);
+            });
+        }
+
+        // Matrix rain effect
+        function createMatrixRain() {
+            const matrixContainer = document.getElementById('matrixRain');
+            const chars = '01KYLE XY';
+            
+            function createChar() {
+                const char = document.createElement('div');
+                char.className = 'matrix-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                char.style.animationDelay = Math.random() * 2 + 's';
+                
+                matrixContainer.appendChild(char);
+                
+                setTimeout(() => {
+                    char.remove();
+                }, 5000);
+            }
+            
+            setInterval(createChar, 200);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize effects
+        document.addEventListener('DOMContentLoaded', () => {
+            createMatrixRain();
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                // Add mobile menu functionality here if needed
+                console.log('Mobile menu clicked');
+            });
+        }
+    </script>
+</body>
+</html>
