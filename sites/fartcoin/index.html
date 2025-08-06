@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fartcoin - The Smelliest Revolution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Fredoka:wght@300;400;500;600;700&display=swap');
+        
+        .creepy-font { font-family: 'Creepster', cursive; }
+        .fun-font { font-family: 'Fredoka', sans-serif; }
+        
+        .gas-bubble {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .gas-bubble:nth-child(2) { animation-delay: -1s; }
+        .gas-bubble:nth-child(3) { animation-delay: -2s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .stink-wave {
+            animation: stink 2s ease-in-out infinite;
+        }
+        
+        @keyframes stink {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        
+        .toilet-paper {
+            animation: unroll 4s linear infinite;
+        }
+        
+        @keyframes unroll {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .fart-glow {
+            box-shadow: 0 0 30px rgba(147, 51, 234, 0.5), 0 0 60px rgba(34, 211, 238, 0.3);
+        }
+        
+        .poop-emoji {
+            filter: drop-shadow(0 0 10px rgba(251, 146, 60, 0.8));
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-900 via-indigo-900 to-cyan-900 min-h-screen overflow-x-hidden fun-font">
+    <!-- Floating Gas Bubbles -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="gas-bubble absolute top-20 left-10 w-8 h-8 bg-green-400 rounded-full opacity-30"></div>
+        <div class="gas-bubble absolute top-40 right-20 w-12 h-12 bg-yellow-400 rounded-full opacity-25"></div>
+        <div class="gas-bubble absolute bottom-32 left-1/4 w-6 h-6 bg-orange-400 rounded-full opacity-35"></div>
+        <div class="gas-bubble absolute top-60 right-1/3 w-10 h-10 bg-lime-400 rounded-full opacity-20"></div>
+    </div>
+
+    <!-- Toilet Paper Navigation -->
+    <nav class="relative z-50 p-6">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="toilet-paper w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-2xl">🧻</span>
+                </div>
+                <span class="text-white text-xl font-bold">FARTCOIN</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-cyan-300 hover:text-pink-400 transition-colors">About</a>
+                <a href="#tokenomics" class="text-cyan-300 hover:text-pink-400 transition-colors">Tokenomics</a>
+                <a href="#roadmap" class="text-cyan-300 hover:text-pink-400 transition-colors">Roadmap</a>
+                <a href="#community" class="text-cyan-300 hover:text-pink-400 transition-colors">Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Diagonal Layout -->
+    <section class="relative min-h-screen flex items-center">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Side - Text Content -->
+            <div class="space-y-8 z-10">
+                <div class="stink-wave">
+                    <h1 class="creepy-font text-6xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-yellow-400 to-orange-400 leading-tight">
+                        FARTCOIN
+                    </h1>
+                </div>
+                <p class="text-2xl text-cyan-300 font-medium">
+                    The smelliest meme to ever grace the interwebs 💨
+                </p>
+                <p class="text-lg text-purple-200 leading-relaxed">
+                    Breaking wind barriers and social norms since 2024. Join the gaseous revolution that's taking the crypto world by storm!
+                </p>
+                
+                <!-- Contract Address -->
+                <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30">
+                    <p class="text-sm text-cyan-300 mb-2">Contract Address:</p>
+                    <div class="flex items-center space-x-3">
+                        <code id="contract" class="text-pink-400 font-mono text-sm bg-purple-900/50 px-3 py-2 rounded-lg flex-1">
+                            oxyzi23451334bonk
+                        </code>
+                        <button onclick="copyContract()" class="fart-glow bg-gradient-to-r from-purple-600 to-cyan-400 px-4 py-2 rounded-lg text-white font-semibold hover:scale-105 transition-transform">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-gradient-to-r from-green-500 to-yellow-500 px-8 py-4 rounded-full text-black font-bold text-lg hover:scale-110 transition-transform shadow-lg">
+                        💨 Buy Now 💨
+                    </button>
+                    <button class="border-2 border-pink-400 px-8 py-4 rounded-full text-pink-400 font-bold text-lg hover:bg-pink-400 hover:text-black transition-all">
+                        Join the Stink
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side - Visual -->
+            <div class="relative flex justify-center items-center">
+                <div class="relative">
+                    <div class="poop-emoji text-9xl animate-bounce">💩</div>
+                    <div class="absolute -top-8 -right-8 text-6xl animate-pulse">💨</div>
+                    <div class="absolute -bottom-4 -left-4 text-4xl animate-spin">🌪️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - Zigzag Layout -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 bg-gradient-to-br from-purple-800/50 to-cyan-800/50 backdrop-blur-sm rounded-3xl p-8 border border-purple-500/30">
+                    <h2 class="text-4xl font-bold text-yellow-400 mb-6">The Gassy Genesis 🌪️</h2>
+                    <p class="text-purple-200 text-lg leading-relaxed mb-6">
+                        Born from the depths of internet culture and powered by the unstoppable force of digestive humor, 
+                        Fartcoin represents the ultimate fusion of meme culture and decentralized finance.
+                    </p>
+                    <p class="text-cyan-300 text-lg leading-relaxed">
+                        We're not just breaking wind - we're breaking the traditional barriers of what a cryptocurrency can be. 
+                        Join millions of degenerates in the smelliest investment opportunity of the century!
+                    </p>
+                </div>
+                <div class="bg-black/40 backdrop-blur-sm rounded-3xl p-8 border border-cyan-500/30 flex flex-col justify-center items-center text-center">
+                    <div class="text-6xl mb-4">🚽</div>
+                    <h3 class="text-2xl font-bold text-pink-400 mb-4">Toilet to the Moon</h3>
+                    <p class="text-purple-200">Flushing away traditional finance, one fart at a time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics - Circular Layout -->
+    <section id="tokenomics" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="creepy-font text-5xl text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-600 mb-16">
+                Gasonomics 💨
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gradient-to-b from-green-500/20 to-yellow-500/20 backdrop-blur-sm rounded-2xl p-6 border border-green-400/30 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">🔥</div>
+                    <h3 class="text-xl font-bold text-green-400 mb-2">Total Supply</h3>
+                    <p class="text-3xl font-bold text-white">1B FART</p>
+                    <p class="text-sm text-green-300 mt-2">Maximum stink capacity</p>
+                </div>
+                <div class="bg-gradient-to-b from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/30 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">💎</div>
+                    <h3 class="text-xl font-bold text-purple-400 mb-2">Liquidity Pool</h3>
+                    <p class="text-3xl font-bold text-white">85%</p>
+                    <p class="text-sm text-purple-300 mt-2">Locked & loaded</p>
+                </div>
+                <div class="bg-gradient-to-b from-cyan-500/20 to-blue-500/20 backdrop-blur-sm rounded-2xl p-6 border border-cyan-400/30 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold text-cyan-400 mb-2">Marketing</h3>
+                    <p class="text-3xl font-bold text-white">10%</p>
+                    <p class="text-sm text-cyan-300 mt-2">Spreading the stink</p>
+                </div>
+                <div class="bg-gradient-to-b from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-2xl p-6 border border-orange-400/30 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">👑</div>
+                    <h3 class="text-xl font-bold text-orange-400 mb-2">Team</h3>
+                    <p class="text-3xl font-bold text-white">5%</p>
+                    <p class="text-sm text-orange-300 mt-2">The gas masters</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap - Timeline -->
+    <section id="roadmap" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="creepy-font text-5xl text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400 mb-16">
+                The Stink Map 🗺️
+            </h2>
+            <div class="space-y-12">
+                <div class="flex items-center space-x-8">
+                    <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl">💨</div>
+                    <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-green-500/30 flex-1">
+                        <h3 class="text-2xl font-bold text-green-400 mb-2">Phase 1: The First Fart</h3>
+                        <p class="text-purple-200">Launch on Solana, establish the stinkiest community, initial marketing blast</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-8 flex-row-reverse">
+                    <div class="bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl">🚀</div>
+                    <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 flex-1">
+                        <h3 class="text-2xl font-bold text-purple-400 mb-2">Phase 2: Gassy Growth</h3>
+                        <p class="text-purple-200">DEX listings, partnerships with other meme projects, NFT collection launch</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <div class="bg-cyan-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl">🌍</div>
+                    <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/30 flex-1">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-2">Phase 3: Global Stink</h3>
+                        <p class="text-purple-200">Major exchange listings, mobile app, Fartcoin merchandise store</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-8 flex-row-reverse">
+                    <div class="bg-pink-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl">👑</div>
+                    <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-pink-500/30 flex-1">
+                        <h3 class="text-2xl font-bold text-pink-400 mb-2">Phase 4: Meme Supremacy</h3>
+                        <p class="text-purple-200">Fartcoin DAO, charity initiatives, become the #1 meme coin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="creepy-font text-5xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 mb-8">
+                Join the Gas Chamber 💨
+            </h2>
+            <p class="text-xl text-purple-200 mb-12 max-w-2xl mx-auto">
+                Connect with fellow fart enthusiasts and stay updated on all the gassy goodness!
+            </p>
+            
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-6 mb-12">
+                <a href="#" class="bg-gradient-to-r from-blue-500 to-cyan-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-transform">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="bg-gradient-to-r from-purple-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-transform">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="bg-gradient-to-r from-indigo-500 to-purple-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-transform">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30">
+                    <div class="text-3xl font-bold text-cyan-400">50K+</div>
+                    <div class="text-purple-200">Stinky Holders</div>
+                </div>
+                <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30">
+                    <div class="text-3xl font-bold text-pink-400">100K+</div>
+                    <div class="text-purple-200">Community Members</div>
+                </div>
+                <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30">
+                    <div class="text-3xl font-bold text-yellow-400">∞</div>
+                    <div class="text-purple-200">Farts Released</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-purple-500/30">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center space-x-3 mb-6">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-lg">🧻</span>
+                </div>
+                <span class="text-white text-xl font-bold">FARTCOIN</span>
+            </div>
+            <p class="text-purple-300 mb-4">
+                The smelliest revolution in crypto history
+            </p>
+            <p class="text-sm text-purple-400">
+                Disclaimer: This is a meme coin with no intrinsic value or expectation of financial return. 
+                Please invest responsibly and only what you can afford to lose. 💨
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function copyContract() {
+            const contractText = document.getElementById('contract').textContent;
+            navigator.clipboard.writeText(contractText).then(() => {
+                // Create a temporary notification
+                const notification = document.createElement('div');
+                notification.textContent = 'Contract address copied! 💨';
+                notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg z-50 font-semibold';
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 2000);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive fart sounds (just visual feedback)
+        document.addEventListener('click', function(e) {
+            if (e.target.textContent.includes('💨') || e.target.textContent.includes('Buy Now')) {
+                // Create a small puff animation
+                const puff = document.createElement('div');
+                puff.textContent = '💨';
+                puff.className = 'fixed pointer-events-none text-2xl animate-ping';
+                puff.style.left = e.clientX + 'px';
+                puff.style.top = e.clientY + 'px';
+                puff.style.zIndex = '9999';
+                document.body.appendChild(puff);
+                
+                setTimeout(() => {
+                    document.body.removeChild(puff);
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
