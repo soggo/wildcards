@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoDOg (SUPER) - The Goodest Boy on the Blockchain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'crypto-purple': '#7c3aed',
+                        'crypto-cyan': '#22d3ee',
+                        'crypto-pink': '#f472b6',
+                        'dog-gold': '#fbbf24',
+                        'dog-brown': '#92400e'
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'wag': 'wag 0.5s ease-in-out infinite alternate',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        wag: {
+                            '0%': { transform: 'rotate(-10deg)' },
+                            '100%': { transform: 'rotate(10deg)' }
+                        },
+                        'pulse-glow': {
+                            '0%': { boxShadow: '0 0 20px rgba(124, 58, 237, 0.5)' },
+                            '100%': { boxShadow: '0 0 40px rgba(124, 58, 237, 0.8), 0 0 60px rgba(34, 211, 238, 0.3)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dog-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(244, 114, 182, 0.05) 0%, transparent 50%);
+        }
+        
+        .paw-print {
+            position: relative;
+        }
+        
+        .paw-print::before {
+            content: '🐾';
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .bone-cursor {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E🦴%3C/text%3E%3C/svg%3E"), auto;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #7c3aed, #22d3ee, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .dog-card {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(34, 211, 238, 0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .woof-button {
+            position: relative;
+            overflow: visible;
+        }
+        
+        .woof-button::after {
+            content: '🐕';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            animation: wag 0.5s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-purple-800 text-white bone-cursor">
+    <!-- Floating Navigation -->
+    <nav class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-black/30 backdrop-blur-md rounded-full px-8 py-4 border border-white/20">
+        <div class="flex items-center space-x-8">
+            <div class="text-2xl font-bold gradient-text">🐕 SUPER</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-crypto-cyan transition-colors">About</a>
+                <a href="#tokenomics" class="hover:text-crypto-pink transition-colors">Tokenomics</a>
+                <a href="#roadmap" class="hover:text-dog-gold transition-colors">Roadmap</a>
+                <a href="#community" class="hover:text-crypto-purple transition-colors">Pack</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Diagonal Layout -->
+    <section class="min-h-screen flex items-center justify-center relative dog-pattern pt-20">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/10 to-transparent"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Side - Content -->
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <div class="text-6xl md:text-8xl font-black gradient-text animate-pulse-glow">
+                            CryptoDOg
+                        </div>
+                        <div class="text-2xl md:text-3xl text-crypto-cyan font-bold">
+                            $SUPER
+                        </div>
+                        <div class="text-xl md:text-2xl text-gray-300 max-w-lg">
+                            The goodest boy on the blockchain 🐕
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" 
+                           target="_blank" rel="noopener noreferrer"
+                           class="woof-button bg-gradient-to-r from-crypto-purple to-crypto-cyan px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg">
+                            Buy on Raydium
+                        </a>
+                        <a href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" 
+                           target="_blank" rel="noopener noreferrer"
+                           class="bg-gradient-to-r from-crypto-pink to-dog-gold px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg">
+                            Buy on Jupiter
+                        </a>
+                    </div>
+                    
+                    <!-- Contract Address -->
+                    <div class="bg-black/40 rounded-2xl p-6 border border-white/20">
+                        <div class="text-sm text-gray-400 mb-2">Contract Address:</div>
+                        <div class="flex items-center space-x-3">
+                            <code id="contract" class="text-crypto-cyan font-mono text-sm break-all">DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk</code>
+                            <button onclick="copyContract()" class="bg-crypto-purple hover:bg-crypto-purple/80 px-4 py-2 rounded-lg text-sm transition-colors">
+                                Copy 📋
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Visual -->
+                <div class="relative">
+                    <div class="text-9xl md:text-[12rem] animate-float text-center">
+                        🐕‍🦺
+                    </div>
+                    <div class="absolute -top-10 -right-10 text-4xl animate-bounce-slow">⭐</div>
+                    <div class="absolute -bottom-10 -left-10 text-4xl animate-bounce-slow" style="animation-delay: 1s;">🚀</div>
+                    <div class="absolute top-1/2 -right-20 text-3xl animate-bounce-slow" style="animation-delay: 2s;">💎</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Zigzag Layout -->
+    <section id="about" class="py-20 bg-gradient-to-l from-blue-900/50 to-purple-900/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold gradient-text mb-6">Meet the Goodest Boy</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    CryptoDOg isn't just another memecoin - he's your loyal companion in the wild world of DeFi. 
+                    With diamond paws and a heart of gold, SUPER is here to fetch you those gains! 🦴
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="dog-card rounded-3xl p-8 text-center hover:scale-105 transition-transform">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold text-crypto-cyan mb-4">Champion Breed</h3>
+                    <p class="text-gray-300">Bred from the finest blockchain genetics, CryptoDOg has the pedigree of a true winner.</p>
+                </div>
+                
+                <div class="dog-card rounded-3xl p-8 text-center hover:scale-105 transition-transform" style="transform: translateY(2rem);">
+                    <div class="text-6xl mb-4">🎾</div>
+                    <h3 class="text-2xl font-bold text-crypto-pink mb-4">Fetch Master</h3>
+                    <p class="text-gray-300">Always ready to fetch those gains and bring them back to the pack. No ball left behind!</p>
+                </div>
+                
+                <div class="dog-card rounded-3xl p-8 text-center hover:scale-105 transition-transform">
+                    <div class="text-6xl mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold text-dog-gold mb-4">Pack Guardian</h3>
+                    <p class="text-gray-300">Protecting the community with unwavering loyalty and diamond-strong security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-20 bg-gradient-to-r from-purple-900/30 to-blue-900/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold gradient-text mb-6">Treat Distribution 🦴</h2>
+                <p class="text-xl text-gray-300">Fair and square, just like a good boy should be!</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center bg-black/40 rounded-2xl p-6 border border-crypto-purple/30">
+                            <span class="text-lg font-semibold">🏊‍♂️ Liquidity Pool</span>
+                            <span class="text-2xl font-bold text-crypto-cyan">85%</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-black/40 rounded-2xl p-6 border border-crypto-pink/30">
+                            <span class="text-lg font-semibold">🎯 Marketing</span>
+                            <span class="text-2xl font-bold text-crypto-pink">10%</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-black/40 rounded-2xl p-6 border border-dog-gold/30">
+                            <span class="text-lg font-semibold">👥 Team</span>
+                            <span class="text-2xl font-bold text-dog-gold">5%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center">
+                        <div class="text-8xl animate-float">🍖</div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <div class="bg-gradient-to-r from-crypto-purple/20 to-crypto-cyan/20 rounded-3xl p-8 border border-white/10">
+                        <h3 class="text-3xl font-bold mb-4 gradient-text">No Bad Dogs Here!</h3>
+                        <p class="text-lg text-gray-300">
+                            🚫 No taxes • 🔥 LP burned • 🗝️ Contract renounced • ✅ 100% community owned
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-20 bg-gradient-to-l from-blue-900/50 to-purple-900/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold gradient-text mb-6">The Journey Ahead 🛤️</h2>
+                <p class="text-xl text-gray-300">Every good boy needs a plan!</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-6 group">
+                        <div class="bg-gradient-to-r from-crypto-purple to-crypto-cyan rounded-full p-4 group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">🚀</span>
+                        </div>
+                        <div class="flex-1 bg-black/40 rounded-2xl p-6 border border-white/20">
+                            <h3 class="text-2xl font-bold text-crypto-cyan mb-2">Phase 1: Puppy Steps</h3>
+                            <p class="text-gray-300">Launch on Solana, build the pack, establish social presence, and get listed on major DEXs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-6 group">
+                        <div class="bg-gradient-to-r from-crypto-pink to-dog-gold rounded-full p-4 group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">🏃‍♂️</span>
+                        </div>
+                        <div class="flex-1 bg-black/40 rounded-2xl p-6 border border-white/20">
+                            <h3 class="text-2xl font-bold text-crypto-pink mb-2">Phase 2: Running Wild</h3>
+                            <p class="text-gray-300">Community growth, partnerships with other dog-themed projects, and major exchange listings.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-6 group">
+                        <div class="bg-gradient-to-r from-dog-gold to-crypto-purple rounded-full p-4 group-hover:scale-110 transition-transform">
+                            <span class="text-2xl">👑</span>
+                        </div>
+                        <div class="flex-1 bg-black/40 rounded-2xl p-6 border border-white/20">
+                            <h3 class="text-2xl font-bold text-dog-gold mb-2">Phase 3: Top Dog</h3>
+                            <p class="text-gray-300">NFT collection, staking rewards, and becoming the alpha of the memecoin pack!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-gradient-to-r from-purple-900/30 to-blue-900/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold gradient-text mb-6">Join the Pack 🐕‍🦺</h2>
+                <p class="text-xl text-gray-300">Every dog needs a pack, and every pack needs good dogs!</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="dog-card rounded-3xl p-8 text-center hover:scale-105 transition-transform">
+                        <div class="text-6xl mb-4">🐦</div>
+                        <h3 class="text-2xl font-bold text-crypto-cyan mb-4">Twitter Pack</h3>
+                        <p class="text-gray-300 mb-6">Follow for daily woofs, memes, and alpha calls!</p>
+                        <a href="https://twitter.com/CryptoDogSUPER" target="_blank" rel="noopener noreferrer" 
+                           class="bg-crypto-cyan text-black px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform inline-block">
+                            Follow @CryptoDogSUPER
+                        </a>
+                    </div>
+                    
+                    <div class="dog-card rounded-3xl p-8 text-center hover:scale-105 transition-transform">
+                        <div class="text-6xl mb-4">💬</div>
+                        <h3 class="text-2xl font-bold text-crypto-pink mb-4">Telegram Den</h3>
+                        <p class="text-gray-300 mb-6">Chat with fellow good boys and girls 24/7!</p>
+                        <a href="https://t.me/CryptoDogSUPER" target="_blank" rel="noopener noreferrer" 
+                           class="bg-crypto-pink text-black px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform inline-block">
+                            Join the Den
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-gradient-to-r from-crypto-purple/20 to-crypto-cyan/20 rounded-3xl p-8 border border-white/10">
+                        <h3 class="text-3xl font-bold mb-6 gradient-text">Ready to be a Good Boy? 🐕</h3>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" 
+                               target="_blank" rel="noopener noreferrer"
+                               class="bg-gradient-to-r from-crypto-purple to-crypto-cyan px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg">
+                                Buy on Raydium 🚀
+                            </a>
+                            <a href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" 
+                               target="_blank" rel="noopener noreferrer"
+                               class="bg-gradient-to-r from-crypto-pink to-dog-gold px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg">
+                                Buy on Jupiter 🪐
+                            </a>
+                            <a href="https://dexscreener.com/solana/DDgP7tTge7TAiARyoB7cDUnTu5q7YaeVE4R9iA3pbonk" 
+                               target="_blank" rel="noopener noreferrer"
+                               class="bg-gradient-to-r from-dog-gold to-crypto-purple px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg">
+                                View on DexScreener 📊
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black/50 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="text-center space-y-6">
+                <div class="text-4xl font-bold gradient-text">🐕 CryptoDOg (SUPER)</div>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    The goodest boy on the blockchain. Always loyal, always ready to fetch those gains, 
+                    and always part of the pack. Woof woof! 🐾
+                </p>
+                <div class="flex justify-center space-x-6 text-sm text-gray-500">
+                    <span>Built on Solana</span>
+                    <span>•</span>
+                    <span>Community Driven</span>
+                    <span>•</span>
+                    <span>Diamond Paws 💎</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Copy contract address functionality
+        function copyContract() {
+            const contractAddress = document.getElementById('contract').textContent;
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                // Create a temporary notification
+                const notification = document.createElement('div');
+                notification.textContent = 'Contract address copied! 🐕';
+                notification.className = 'fixed top-4 right-4 bg-crypto-purple text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-bounce';
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 3000);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive paw prints on click
+        document.addEventListener('click', function(e) {
+            if (Math.random() > 0.7) { // 30% chance
+                const paw = document.createElement('div');
+                paw.innerHTML = '🐾';
+                paw.style.position = 'fixed';
+                paw.style.left = e.clientX + 'px';
+                paw.style.top = e.clientY + 'px';
+                paw.style.fontSize = '1.5rem';
+                paw.style.pointerEvents = 'none';
+                paw.style.zIndex = '1000';
+                paw.style.animation = 'float 2s ease-out forwards';
+                document.body.appendChild(paw);
+                
+                setTimeout(() => {
+                    if (document.body.contains(paw)) {
+                        document.body.removeChild(paw);
+                    }
+                }, 2000);
+            }
+        });
+
+        // Add floating elements animation
+        function createFloatingElement() {
+            const elements = ['🦴', '🎾', '⭐', '💎'];
+            const element = document.createElement('div');
+            element.innerHTML = elements[Math.floor(Math.random() * elements.length)];
+            element.style.position = 'fixed';
+            element.style.left = Math.random() * window.innerWidth + 'px';
+            element.style.top = window.innerHeight + 'px';
+            element.style.fontSize = '2rem';
+            element.style.pointerEvents = 'none';
+            element.style.zIndex = '1';
+            element.style.opacity = '0.3';
+            element.style.animation = 'float 8s linear forwards';
+            document.body.appendChild(element);
+            
+            setTimeout(() => {
+                if (document.body.contains(element)) {
+                    document.body.removeChild(element);
+                }
+            }, 8000);
+        }
+
+        // Create floating elements periodically
+        setInterval(createFloatingElement, 3000);
+    </script>
+</body>
+</html>
