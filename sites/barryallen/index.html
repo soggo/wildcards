@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barry Allen (flash) - The Fastest Memecoin</title>
+    <meta name="description" content="Barry Allen (flash) - The fastest memecoin on Solana. Join the speed force!">
+    <meta name="keywords" content="Barry Allen, flash, memecoin, Solana, crypto, fast, speed, DEX, Raydium, Jupiter">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for animations and specific elements */
+        @keyframes pulse-light {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(255, 255, 0, 0.7), 0 0 30px rgba(255, 255, 0, 0.5), 0 0 45px rgba(255, 255, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(255, 255, 0, 1), 0 0 40px rgba(255, 255, 0, 0.8), 0 0 60px rgba(255, 255, 0, 0.6);
+            }
+        }
+
+        @keyframes lightning-strike {
+            0% { transform: translateX(-100%); opacity: 0; }
+            10% { transform: translateX(0); opacity: 1; }
+            20% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animated-bg {
+            background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #2a0000, #00002a);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        .text-logo {
+            font-family: 'Arial Black', sans-serif; /* A bold, impactful font */
+            text-shadow: 
+                -2px -2px 0 #ffeb3b,  /* Yellow outline */
+                2px -2px 0 #ffeb3b,
+                -2px 2px 0 #ffeb3b,
+                2px 2px 0 #ffeb3b,
+                0 0 20px rgba(255, 255, 0, 0.8); /* Glow */
+        }
+
+        .flash-symbol {
+            font-family: 'Impact', sans-serif; /* Another bold font for contrast */
+            text-shadow: 
+                -1px -1px 0 #ffeb3b,  /* Yellow outline */
+                1px -1px 0 #ffeb3b,
+                -1px 1px 0 #ffeb3b,
+                1px 1px 0 #ffeb3b,
+                0 0 10px rgba(255, 255, 0, 0.6); /* Glow */
+        }
+
+        .lightning-line {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ffeb3b, transparent);
+            animation: lightning-strike 5s infinite ease-in-out;
+            opacity: 0;
+        }
+
+        .lightning-line:nth-child(1) { top: 10%; left: -50%; animation-delay: 0s; }
+        .lightning-line:nth-child(2) { top: 30%; left: -70%; animation-delay: 1.5s; }
+        .lightning-line:nth-child(3) { top: 50%; left: -30%; animation-delay: 3s; }
+        .lightning-line:nth-child(4) { top: 70%; left: -90%; animation-delay: 4.5s; }
+
+        /* Ensure smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar for aesthetics, optional */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ffeb3b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffe000;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans animated-bg overflow-x-hidden">
+    <!-- Mobile Menu Toggle (Hidden on larger screens) -->
+    <div class="md:hidden fixed top-4 right-4 z-50">
+        <button id="mobile-menu-button" class="p-2 rounded-md bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <nav id="mobile-menu" class="fixed inset-0 bg-gray-950 bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <button id="close-mobile-menu" class="absolute top-4 right-4 p-2 rounded-md bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a href="#hero" class="text-4xl font-bold text-yellow-400 hover:text-white transition duration-300">Home</a>
+        <a href="#about" class="text-4xl font-bold text-yellow-400 hover:text-white transition duration-300">About</a>
+        <a href="#tokenomics" class="text-4xl font-bold text-yellow-400 hover:text-white transition duration-300">Tokenomics</a>
+        <a href="#roadmap" class="text-4xl font-bold text-yellow-400 hover:text-white transition duration-300">Roadmap</a>
+        <a href="#community" class="text-4xl font-bold text-yellow-400 hover:text-white transition duration-300">Community</a>
+    </nav>
+
+    <!-- Main Navigation (Desktop) -->
+    <header class="hidden md:flex justify-center py-6 px-8 bg-gray-900 bg-opacity-70 backdrop-blur-sm sticky top-0 z-30 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-red-600 flex items-center">
+                <span class="text-logo text-3xl md:text-4xl lg:text-5xl text-red-600">Barry Allen</span>
+                <span class="flash-symbol text-yellow-400 text-4xl md:text-5xl lg:text-6xl ml-2">⚡</span>
+            </div>
+            <ul class="flex space-x-8">
+                <li><a href="#hero" class="text-lg font-semibold text-white hover:text-yellow-400 transition duration-300">Home</a></li>
+                <li><a href="#about" class="text-lg font-semibold text-white hover:text-yellow-400 transition duration-300">About</a></li>
+                <li><a href="#tokenomics" class="text-lg font-semibold text-white hover:text-yellow-400 transition duration-300">Tokenomics</a></li>
+                <li><a href="#roadmap" class="text-lg font-semibold text-white hover:text-yellow-400 transition duration-300">Roadmap</a></li>
+                <li><a href="#community" class="text-lg font-semibold text-white hover:text-yellow-400 transition duration-300">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center text-center p-4 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="lightning-line"></div>
+            <div class="lightning-line"></div>
+            <div class="lightning-line"></div>
+            <div class="lightning-line"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-red-600 mb-4 leading-tight text-logo">
+                Barry Allen <span class="flash-symbol text-yellow-400">⚡</span>
+            </h1>
+            <p class="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-200 mb-8">
+                The Fastest Memecoin on Solana. <br class="hidden md:block"> Join the Speed Force!
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+                <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=3biBnQ9sAUsCxVCExmSM2os1P2XhLnTZkyPHFAGwbonk" target="_blank" rel="noopener noreferrer" class="bg-yellow-400 text-gray-900 font-bold py-4 px-10 rounded-full text-xl md:text-2xl hover:bg-yellow-300 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-[pulse-light_2s_infinite]">
+                    Buy on Raydium
+                </a>
+                <a href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=3biBnQ9sAUsCxVCExmSM2os1P2XhLnTZkyPHFAGwbonk" target="_blank" rel="noopener noreferrer" class="bg-red-600 text-white font-bold py-4 px-10 rounded-full text-xl md:text-2xl hover:bg-red-700 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    Buy on Jupiter
+                </a>
+            </div>
+
+            <div class="bg-gray-800 bg-opacity-70 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-inner max-w-xl mx-auto border border-yellow-400">
+                <p class="text-lg md:text-xl font-mono text-gray-300 mb-2">Contract Address (Solana):</p>
+                <div class="flex items-center justify-center">
+                    <span id="contract-address" class="text-yellow-400 text-sm md:text-base lg:text-lg select-all break-all mr-3">
+                        3biBnQ9sAUsCxVCExmSM2os1P2XhLnTZkyPHFAGwbonk
+                    </span>
+                    <button id="copy-button" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-md text-sm md:text-base transition duration-300 flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                        Copy
+                    </button>
+                </div>
+                <span id="copy-feedback" class="text-green-400 text-sm mt-2 hidden">Copied!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 md:px-8 bg-gray-900 bg-opacity-80 backdrop-blur-sm relative z-20">
+        <div class="container mx-auto max-w-5xl text-center">
+            <h2 class="text-5xl font-extrabold text-red-600 mb-12 relative inline-block">
+                About <span class="text-yellow-400">Barry Allen</span>
+                <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-yellow-400 rounded-full"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <p class="text-lg md:text-xl leading-relaxed mb-6">
+                        In a world full of slow, sluggish tokens, one hero emerges from the Solana blockchain: <span class="text-yellow-400 font-bold">Barry Allen (flash)</span>. We're not just fast; we're <span class="text-red-600 font-bold">supersonic</span>. This isn't just a memecoin; it's a movement, a blur of pure, unadulterated speed.
+                    </p>
+                    <p class="text-lg md:text-xl leading-relaxed mb-6">
+                        Born from the need for speed and the love for memes, $flash is here to outpace the competition, leaving a trail of lightning and laughter in its wake. Forget lagging transactions and slow pumps – with Barry Allen, you're always in the fast lane.
+                    </p>
+                    <p class="text-lg md:text-xl leading-relaxed">
+                        Join us as we sprint towards the moon, fueled by community, memes, and an insatiable desire for velocity. This is the future of fast. This is $flash.
+                    </p>
+                </div>
+                <div class="relative flex justify-center items-center">
+                    <div class="absolute inset-0 bg-yellow-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                    <img src="https://via.placeholder.com/400x400/FFD700/000000?text=⚡️FLASH⚡️" alt="Barry Allen Flash Logo" class="relative z-10 w-full max-w-sm rounded-full border-4 border-red-600 shadow-2xl transform hover:scale-105 transition duration-500 ease-in-out">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-20 px-4 md:px-8 bg-gray-950 relative z-20">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h2 class="text-5xl font-extrabold text-yellow-400 mb-12 relative inline-block">
+                Tokenomics: The Speed Force Formula
+                <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-red-600 rounded-full"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-red-600 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-4 flex items-center justify-center">
+                        <span class="text-5xl mr-2">⚡</span> Total Velocity
+                    </h3>
+                    <p class="text-xl text-gray-200">
+                        <span class="font-bold text-red-600">1 Billion $flash</span> tokens. Every single one designed for maximum velocity.
+                    </p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-red-600 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-4 flex items-center justify-center">
+                        <span class="text-5xl mr-2">💨</span> Zero Friction
+                    </h3>
+                    <p class="text-xl text-gray-200">
+                        <span class="font-bold text-red-600">0% Buy/Sell Tax.</span> We believe in pure, unhindered speed. No slowing down for taxes!
+                    </p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-red-600 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-4 flex items-center justify-center">
+                        <span class="text-5xl mr-2">🚀</span> Liquidity Locked
+                    </h3>
+                    <p class="text-xl text-gray-200">
+                        Liquidity is <span class="font-bold text-red-600">locked forever</span>, ensuring a stable and secure journey to the speed of light.
+                    </p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-red-600 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-4 flex items-center justify-center">
+                        <span class="text-5xl mr-2">🤝</span> Community Driven
+                    </h3>
+                    <p class="text-xl text-gray-200">
+                        <span class="font-bold text-red-600">100% Community Allocation.</span> The speed force is powered by YOU.
+                    </p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-red-600 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-4 flex items-center justify-center">
+                        <span class="text-5xl mr-2">🔥</span> Burn Mechanism
+                    </h3>
+                    <p class="text-xl text-gray-200">
+                        Future mechanisms to <span class="font-bold text-red-600">reduce supply</span> and increase velocity.
+                    </p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-red-600 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-4 flex items-center justify-center">
+                        <span class="text-5xl mr-2">⚡</span> Solana Powered
+                    </h3>
+                    <p class="text-xl text-gray-200">
+                        Built on the <span class="font-bold text-red-600">fastest blockchain</span>, ensuring lightning-quick transactions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-20 px-4 md:px-8 bg-gray-900 bg-opacity-80 backdrop-blur-sm relative z-20">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h2 class="text-5xl font-extrabold text-red-600 mb-12 relative inline-block">
+                Roadmap: The Speed Trail
+                <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-yellow-400 rounded-full"></span>
+            </h2>
+            <div class="relative mt-16">
+                <!-- Vertical line representing the speed trail -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-2 h-full bg-yellow-400 rounded-full hidden md:block"></div>
+
+                <div class="flex flex-col items-center space-y-16">
+                    <!-- Phase 1 -->
+                    <div class="relative w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center md:justify-between odd:md:flex-row-reverse">
+                        <div class="md:w-1/2 p-4 text-center md:text-left odd:md:text-right">
+                            <h3 class="text-4xl font-bold text-yellow-400 mb-3">Phase 1: Supersonic Launch</h3>
+                            <ul class="list-disc list-inside text-lg text-gray-200 space-y-2">
+                                <li>Contract Deployment & Verification</li>
+                                <li>Liquidity Pool Creation & Lock</li>
+                                <li>Website Launch (You are here!)</li>
+                                <li>Initial Community Building & Telegram/Twitter Blitz</li>
+                                <li>CoinGecko/CoinMarketCap Listings</li>
+                            </ul>
+                        </div>
+                        <div class="relative md:w-1/2 flex justify-center md:justify-start odd:md:justify-end">
+                            <div class="absolute -top-10 md:top-1/2 md:-translate-y-1/2 w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-xl border-4 border-yellow-400 animate-pulse-light">
+                                <span class="text-4xl font-bold text-white">1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="relative w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center md:justify-between odd:md:flex-row-reverse">
+                        <div class="md:w-1/2 p-4 text-center md:text-left odd:md:text-right">
+                            <h3 class="text-4xl font-bold text-yellow-400 mb-3">Phase 2: Hyperspeed Growth</h3>
+                            <ul class="list-disc list-inside text-lg text-gray-200 space-y-2">
+                                <li>Strategic Influencer Partnerships</li>
+                                <li>Community Contests & Giveaways</li>
+                                <li>DEX Integrations & Partnerships</li>
+                                <li>First Meme Competition: Unleash the Speed!</li>
+                                <li>Expansion of Marketing Campaigns</li>
+                            </ul>
+                        </div>
+                        <div class="relative md:w-1/2 flex justify-center md:justify-start odd:md:justify-end">
+                            <div class="absolute -top-10 md:top-1/2 md:-translate-y-1/2 w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-xl border-4 border-yellow-400 animate-pulse-light">
+                                <span class="text-4xl font-bold text-white">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="relative w-full md:w-3/4 lg:w-2/3 flex flex-col md:flex-row items-center md:justify-between odd:md:flex-row-reverse">
+                        <div class="md:w-1/2 p-4 text-center md:text-left odd:md:text-right">
+                            <h3 class="text-4xl font-bold text-yellow-400 mb-3">Phase 3: Infinite Mass Punch</h3>
+                            <ul class="list-disc list-inside text-lg text-gray-200 space-y-2">
+                                <li>Tier 1 CEX Listings Exploration</li>
+                                <li>NFT Collection Launch: Speedster Avatars</li>
+                                <li>Community Governance & DAO Implementation</li>
+                                <li>Real-world Utility Partnerships (Speed-themed!)</li>
+                                <li>Global Marketing Blitz: Beyond the Speed of Light</li>
+                            </ul>
+                        </div>
+                        <div class="relative md:w-1/2 flex justify-center md:justify-start odd:md:justify-end">
+                            <div class="absolute -top-10 md:top-1/2 md:-translate-y-1/2 w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-xl border-4 border-yellow-400 animate-pulse-light">
+                                <span class="text-4xl font-bold text-white">3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 px-4 md:px-8 bg-gray-950 relative z-20">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-5xl font-extrabold text-yellow-400 mb-12 relative inline-block">
+                Join the Speed Force
+                <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-red-600 rounded-full"></span>
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10">
+                Don't get left behind in the dust! Connect with the fastest community on Solana.
+            </p>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a href="https://twitter.com/BarryAllenFlash" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg border border-red-600 hover:bg-red-700 transition duration-300 transform hover:scale-105">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/512px-Logo_of_Twitter.svg.png" alt="Twitter" class="w-16 h-16 mb-3 filter invert">
+                    <span class="text-xl font-semibold text-white">Twitter</span>
+                    <span class="text-sm text-gray-300">@BarryAllenFlash</span>
+                </a>
+                <a href="https://t.me/BarryAllenFlashPortal" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg border border-red-600 hover:bg-red-700 transition duration-300 transform hover:scale-105">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png" alt="Telegram" class="w-16 h-16 mb-3 filter invert">
+                    <span class="text-xl font-semibold text-white">Telegram</span>
+                    <span class="text-sm text-gray-300">/BarryAllenFlashPortal</span>
+                </a>
+                <a href="https://discord.gg/FlashForce" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg border border-red-600 hover:bg-red-700 transition duration-300 transform hover:scale-105">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Discord_logo_black.svg/512px-Discord_logo_black.svg.png" alt="Discord" class="w-16 h-16 mb-3 filter invert">
+                    <span class="text-xl font-semibold text-white">Discord</span>
+                    <span class="text-sm text-gray-300">/FlashForce</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-4 md:px-8 bg-gray-900 bg-opacity-70 backdrop-blur-sm text-center text-gray-400">
+        <p class="mb-4 text-lg">Barry Allen (flash) - The Fastest Memecoin on Solana.</p>
+        <p>&copy; 2024 Barry Allen. All rights reserved. <span class="text-red-600">⚡</span></p>
+        <p class="mt-2 text-sm">Disclaimer: $flash is a memecoin for entertainment purposes only. Do your own research.</p>
+    </footer>
+
+    <script>
+        // Contract Address Copy Functionality
+        document.getElementById('copy-button').addEventListener('click', function() {
+            const contractAddress = document.getElementById('contract-address').textContent.trim();
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                const feedback = document.getElementById('copy-feedback');
+                feedback.classList.remove('hidden');
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
